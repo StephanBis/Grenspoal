@@ -77,7 +77,7 @@
             $('.scrollup').fadeOut();
         }
 
-        if ($(this).scrollTop() > 130) {
+        if ($(this).scrollTop() > 210) {
             $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
         } else {
             $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
@@ -342,6 +342,15 @@ $("#send-mail").click(function () {
             jQuery('#third-person').removeClass("animated pulse");
         }
     });
+	
+	//animate fourth team member
+    jQuery('#fourth-person').bind('inview', function (event, visible) {
+        if (visible == true) {
+            jQuery('#fourth-person').addClass("animated pulse");
+        } else {
+            jQuery('#fourth-person').removeClass("animated pulse");
+        }
+    });
     
     //Animate price columns
     jQuery('.price-column, .testimonial').bind('inview', function (event, visible) {
@@ -377,14 +386,14 @@ $("#send-mail").click(function () {
 
 function initializeMap() {
 
-    var lat = '44.8164056'; //Set your latitude.
-    var lon = '20.46090424'; //Set your longitude.
+    var lat = '51.180796'; //Set your latitude.
+    var lon = '5.726261'; //Set your longitude.
 
     var centerLon = lon - 0.0105;
 
     var myOptions = {
-        scrollwheel: false,
-        draggable: false,
+        scrollwheel: true,
+        draggable: true,
         disableDefaultUI: true,
         center: new google.maps.LatLng(lat, centerLon),
         zoom: 15,
@@ -398,7 +407,9 @@ function initializeMap() {
         position: new google.maps.LatLng(lat, lon),
     });
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+		content: "Carwash & Fuel Grenspoal"
+	});
 
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
