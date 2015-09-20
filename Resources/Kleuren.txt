@@ -1,0 +1,3 @@
+Rood: #da291c
+Geel: #fedd00
+Oranje: #fe5000
