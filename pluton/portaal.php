@@ -61,16 +61,86 @@
             <div class="container">
                 <!-- Start title section -->
                 <div class="title">
-                    <h1>Login</h1>
+                    <h1>Portaal</h1>
                 </div>
 				<div class="row-fluid">
-					<div class="span12" style="text-align: center;">
+					<h3>Instellen prijzen. <br>Deze zullen ingaan om middernacht.</h3>
+					<div class="span12">
 						<form method="post" action="portaal.php">
-							<input id="gebruikersnaam" name="gebruikersnaam" maxlength="50" type="text" value="" placeholder="Gebruikersnaam" required="">	
-							<br>							
-							<input id="wachtwoord" name="wachtwoord" maxlength="50" type="password" value="" placeholder="Wachtwoord" required="">
-							<br>
-							<input class="message-btn" type="submit" value="Inloggen">
+						
+						<?php	
+							
+							$host = '127.0.0.1';
+							$username = 'root';
+							$password = 'pxl';
+							$dbname = 'grenspoal';
+							
+							if (isset($_POST["opslaan"])) 
+							{
+								// Create connection
+								$conn = new mysqli($host, $username, $password, $dbname);
+								// Check connection
+								if ($conn->connect_error) {
+									die("Connection failed: " . $conn->connect_error);
+								} 
+
+								foreach ($_POST as $param_name => $param_val) {
+									$sql = "UPDATE Prijzen SET Prijs='" . $param_val . "' WHERE Naam='" . sprintf('%0.3f', $param_name) . "'";
+
+									if ($conn->query($sql) === TRUE) {
+										echo "Record updated successfully";
+									} else {
+										echo "Error updating record: " . $conn->error;
+									}
+								}
+								
+								$conn->close();
+								
+								echo "<p style='color: green;'>De prijzen zijn geupdate!</p>";
+								
+								getPrijzen();
+							}
+							else
+							{
+								$gebruikersnaam = $_POST["gebruikersnaam"];
+								$wachtwoord = $_POST["wachtwoord"];
+								
+								if ($gebruikersnaam != "admin" || $wachtwoord != "admin") 
+								{
+									header('Location: login.php');
+								} 
+								else
+								{
+									getPrijzen();
+								}	
+							}
+							
+							function getPrijzen()
+							{
+								$host = '127.0.0.1';
+								$username = 'root';
+								$password = 'pxl';
+								$dbname = 'grenspoal';
+								
+								$dbh = mysql_connect( $host, $username, $password );
+								mysql_select_db($dbname);
+								$Sql = "SELECT * FROM prijzen";
+								$sth = mysql_query($Sql, $dbh);
+								
+								while( $row = mysql_fetch_object( $sth ) )
+								{
+								?>
+								
+								<label for="<?php echo $row->Naam ?>"><?php echo $row->Naam ?>: </label>
+								<input id="<?php echo $row->Naam ?>" name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">	
+								
+								<?php								
+								}
+							}
+
+						?>
+						
+							<br><input id="opslaan" name="opslaan" class="message-btn" type="submit" value="Opslaan">
 						</form>
 					</div>
 				</div>
