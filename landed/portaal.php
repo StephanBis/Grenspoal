@@ -19,10 +19,10 @@
 
 			<!-- Header -->
 			<header id="header">
-				<h1 id="logo"><a href="index.html">Carwash & Fuel Grenspoal</a></h1>
+				<h1 id="logo"><a href="index.php">Carwash & Fuel Grenspoal</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="button special">Terug</a></li>
+						<li><a href="index.php" class="button special">Terug</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -31,7 +31,7 @@
 			<section id="banner">
 				<div class="content" style="text-align: center;">
 					<h2>Instellen prijzen<br></h2>
-					<p>Deze zullen op de website komen om middernacht.</p>
+					<p>Onderstaande prijzen zijn de prijzen van deze dag.</p>
 					<form method="post" action="portaal.php">
 						
 						<?php	
@@ -50,22 +50,29 @@
 									die("Connection failed: " . $conn->connect_error);
 								} 
 
+								$sql = "DELETE FROM prijzen WHERE Datum = '" . $_POST['datum'] . "'";
+								
+								if ($conn->query($sql) !== TRUE) {
+									echo "Error updating record: " . $conn->error;
+								} 
+								
 								foreach ($_POST as $param_name => $param_val) {
 									if ($param_name !== "opslaan"  && $param_name !== "datum")
 									{
-										$sql = "UPDATE prijzen SET Prijs=" . sprintf('%0.3f',$param_val) . " WHERE Naam='" . str_replace("_", " ", $param_name) . "'";
+										$sql = "INSERT INTO prijzen (Naam, Prijs, Datum) VALUES ('" . str_replace('_', ' ', $param_name) . "','" . sprintf('%0.3f',$param_val) . "','" . $_POST['datum'] . "')";
+										//$sql = "UPDATE prijzen SET Prijs=" . sprintf('%0.3f',$param_val) . " WHERE Naam='" . str_replace("_", " ", $param_name) . "'";
 										
 										//echo $param_name . " = " . $param_val . " - " . $sql . "<br>";
 										
 										if ($conn->query($sql) !== TRUE) {
-											echo "Error updating record: " . $conn->error;
+											echo "<p style='color: red;'>Fout bij het updaten van de prijzen: " . $conn->error . "</p>";
 										} 
 									}
 								}
 								
 								$conn->close();
 								
-								echo "<p style='color: green;'>De prijzen zijn geupdate!</p>";
+								echo "<p style='color: green;'>De prijzen voor " . $_POST['datum'] . " zijn opgeslagen!</p>";
 								
 								getPrijzen();
 							}
@@ -126,31 +133,38 @@
 										name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">	
 									</div>
 								</div>
-
 								<?php								
 								}
 							}
 
 						?>
-						<br><input id="datum" style="
-											-moz-appearance: none;
-											-webkit-appearance: none;
-											-ms-appearance: none;
-											appearance: none;
-											-moz-transition: border-color 0.2s ease-in-out;
-											-webkit-transition: border-color 0.2s ease-in-out;
-											-ms-transition: border-color 0.2s ease-in-out;
-											transition: border-color 0.2s ease-in-out;
-											background: transparent;
-											border-radius: 4px;
-											border: solid 1px rgba(255, 255, 255, 0.3);
-											color: inherit;
-											display: block;
-											outline: 0;
-											padding: 0 1em;
-											text-decoration: none;
-											width: 100%;" 
-								name="datum" type="date">
+						<hr>
+						<div class="row uniform 50%">
+							<div class="6u 12u$(xsmall)">
+								<label for="datum">Datum van prijzen: </label>										
+							</div>
+							<div class="6u 12u$(xsmall)">
+								<input id="datum" style="
+												-moz-appearance: none;
+												-webkit-appearance: none;
+												-ms-appearance: none;
+												appearance: none;
+												-moz-transition: border-color 0.2s ease-in-out;
+												-webkit-transition: border-color 0.2s ease-in-out;
+												-ms-transition: border-color 0.2s ease-in-out;
+												transition: border-color 0.2s ease-in-out;
+												background: transparent;
+												border-radius: 4px;
+												border: solid 1px rgba(255, 255, 255, 0.3);
+												color: inherit;
+												display: block;
+												outline: 0;
+												padding: 0 1em;
+												text-decoration: none;
+												width: 100%;" 
+									name="datum" type="date" value="<?php $datetime = new DateTime('tomorrow'); echo $datetime->format('Y-m-d'); ?>">
+							</div>
+						</div>
 						<br><input id="opslaan" name="opslaan" type="submit" value="Opslaan">
 					</form>
 				</div>

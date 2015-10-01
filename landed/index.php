@@ -22,11 +22,11 @@
 					<h1 id="logo"><a href="index.html">Carwash & Fuel Grenspoal</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#banner">Home</a></li>
-							<li><a href="#one">Shop</a></li>
-							<li><a href="#two">Carwash</a></li>
-							<li><a href="#four">Waspas</a></li>
-							<li><a href="#five">Contact</a></li>
+							<li><a href="#banner" class="scroll">Home</a></li>
+							<li><a href="#one" class="scroll">Shop</a></li>
+							<li><a href="#two" class="scroll">Carwash</a></li>
+							<li><a href="#four" class="scroll">Waspas</a></li>
+							<li><a href="#six" class="scroll">Contact</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -38,7 +38,55 @@
 							<h2>Welkom bij de Grenspoal</h2>
 							<p>Tankstation Grenspoal is eigendom van brandstoffen <br> Tilmans-Pouls & Zoon NV uit Maaseik.</p>
 						</header>
-						<span class="image">Prijzen</span>
+						
+						<table class="image">
+							<tr>
+								<td colspan="2"><strong>Liter prijzen</strong></td>
+							</tr>
+						
+						<?php	
+							$host = '127.0.0.1';
+							$username = 'root';
+							$password = 'pxl';
+							$dbname = 'grenspoal';
+							
+							// Create connection
+							$conn = new mysqli($host, $username, $password, $dbname);
+							// Check connection
+							if ($conn->connect_error) {
+								die("Connection failed: " . $conn->connect_error);
+							} 
+
+							$dbh = mysql_connect( $host, $username, $password );
+							mysql_select_db($dbname);
+							$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
+							$sth = mysql_query($Sql, $dbh);
+							
+							while( $row = mysql_fetch_object( $sth ) )
+							{
+								if ($row->Naam !== "AdBlue")
+								{
+							?>
+								<tr>
+									<td><?php echo $row->Naam ?></td>
+									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+								</tr>
+
+							<?php								
+								}
+								else
+								{
+							?>
+								<tr>
+									<td><?php echo $row->Naam ?> ®</td>
+									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+								</tr>
+							<?php		
+								}
+							}
+						?>
+
+						</table>
 					</div>
 				</section>
 				
@@ -380,21 +428,48 @@
 						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Bisschop Software</li>
 					</ul>
 				</footer>
-
+				
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				
 		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.counterup.js"></script>
+			<script src="assets/js/jquery.waypoints.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script type="text/javascript" src="assets/js/move-top.js"></script>
+			<script type="text/javascript" src="assets/js/easing.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				jQuery(document).ready(function( $ ) {
+					$('.float').counterUp({
+						delay: 10, // the delay time in ms
+						time: 1800 // the speed time in ms
+					});
+					
+					//dit zorgt er normaal voor dat hij scrolled.. maar werkt nog niet
+					$(".scroll").on('click','a', function(event){ 
+						event.preventDefault();
+						var o =  $( $(this).attr("href") ).offset();   
+						var sT = o.top - $(".spotlight style3 left").outerHeight(true); // get the fixedbar height
+						// compute the correct offset and scroll to it.
+						//window.scrollTo(0,sT);
+						$('html,body').animate({scrollTop:sT},1000);
 
+					});
+					
+					$().UItoTop({ easingType: 'easeOutQuad' });
+				});
+			</script>
 	</body>
 </html>
