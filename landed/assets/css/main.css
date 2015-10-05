@@ -7,6 +7,16 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.pijl
+{
+	width: 38px;	
+}
+
+.pijl img
+{
+	width: 36px;
+}
+
 #toTop {
 	display: none;
 	text-decoration: none;
