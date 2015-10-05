@@ -7,6 +7,34 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* KLEUR */
+
+.rood {
+	background-color: rgba(255, 0, 0, 0.5) !important; 
+}
+
+.wit {
+	background-color: rgba(255, 255, 255, 0.5) !important; 
+}
+
+.geel {
+	background-color: rgba(255, 255, 0, 0.5) !important; 
+}
+
+.groen {
+	background-color: rgba(0, 255, 0, 0.5) !important; 
+}
+
+.paars {
+	background-color: rgba(255, 0, 255, 0.5) !important; 
+}
+
+.blauw {
+	background-color: rgba(0, 0, 255, 0.5) !important; 
+}
+
+/* TO TOP */
+
 #toTop {
 	display: none;
 	text-decoration: none;

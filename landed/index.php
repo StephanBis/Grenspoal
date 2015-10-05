@@ -67,7 +67,7 @@
 								if ($row->Naam !== "AdBlue")
 								{
 							?>
-								<tr>
+								<tr class="<?php echo $row->Css ?>">
 									<td><?php echo $row->Naam ?></td>
 									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
@@ -77,7 +77,7 @@
 								else
 								{
 							?>
-								<tr>
+								<tr class="<?php echo $row->Css ?>">
 									<td><?php echo $row->Naam ?> ®</td>
 									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
@@ -406,29 +406,46 @@
 					<div class="container">
 						<header>
 							<h2>Contact</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
 						</header>
 						<form method="post" action="#" class="container 50%">
-							<div class="row uniform 50%">
-								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><span class="icon alt fa-map-marker"></span> Heikempweg 1003<br>3640 Molenbeersel - Kinrooi</div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><span class="icon alt fa-phone"></span> +32 89 46 10 45</div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><span class="icon alt fa-envelope-o"></span> <a href="mailto:EMAIL"></a> EMAIL</div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><span class="icon alt fa-facebook-official"></span> <a href="http://www.facebook.com"></a> Facebook pagina</div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><input type="text" name="naam" id="naam" placeholder="Naam..." required /></div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-mail..." required /></div>
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><textarea style="max-width: 100%;" name="bericht" id="bericht" placeholder="Bericht..." required></textarea></div>	
+							</div>
+							<div class="row uniform 100%">
+								<div class="6u 12u$(xsmall)"><input type="submit" value="Stuur bericht" class="fit special" /></div>
 							</div>
 						</form>
+						<div class="container 50%">
+							
+						</div>
 					</div>
 				</section>
 
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
-						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Bisschop Software</li>
+						<li>Website gemaakt door Bisschop Software - Design door Landed</li>
 					</ul>
 				</footer>
 				
@@ -447,6 +464,7 @@
 			<script src="assets/js/util.js"></script>
 			<script type="text/javascript" src="assets/js/move-top.js"></script>
 			<script type="text/javascript" src="assets/js/easing.js"></script>
+			<script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			
@@ -457,17 +475,17 @@
 						time: 1800 // the speed time in ms
 					});
 					
-					//dit zorgt er normaal voor dat hij scrolled.. maar werkt nog niet
-					$(".scroll").on('click','a', function(event){ 
+					$( ".scroll" ).click(function() {
 						event.preventDefault();
 						var o =  $( $(this).attr("href") ).offset();   
-						var sT = o.top - $(".spotlight style3 left").outerHeight(true); // get the fixedbar height
-						// compute the correct offset and scroll to it.
-						//window.scrollTo(0,sT);
-						$('html,body').animate({scrollTop:sT},1000);
-
+						var sT = o.top - $(".header").outerHeight(true);
+						
+						$('html, body').animate({
+							scrollTop: sT
+						}, 1000);
+						
 					});
-					
+
 					$().UItoTop({ easingType: 'easeOutQuad' });
 				});
 			</script>
