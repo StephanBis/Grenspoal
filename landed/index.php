@@ -491,7 +491,7 @@
 					</ul>
 				</footer>
 				
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				<a href="#" id="toTop" style="display: block;"></a>
 				
 		</div>
 
