@@ -1,54 +1,13 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
-.breed h3 {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.breed table {
-	margin: auto;
-	margin-bottom: 40px;
-	width: 90%;
-}
-
-.rood {
-	background-color: rgba(255, 0, 0, 0.25) !important;
-}
-
-.wit {
-	background-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-.geel {
-	background-color: rgba(255, 255, 0, 0.25) !important;
-}
-
-.groen {
-	background-color: rgba(0, 255, 0, 0.25) !important;
-}
-
-.paars {
-	background-color: rgba(255, 0, 255, 0.25) !important;
-}
-
-.blauw {
-	background-color: rgba(0, 0, 255, 0.25) !important;
-}
-
-.prijzen {
-	margin: auto;
-	margin-top: 20px;
-	width: 50%;
-	text-align: right;
-	border-collapse: initial;
-}
-
-.pijl {
+.pijl
+{
 	width: 38px;	
 }
 
-.pijl img {
+.pijl img
+{
 	width: 36px;
 }
 
@@ -2724,7 +2683,7 @@
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.025);
+				background-color: rgba(255, 255, 255, 0.075);
 			}
 
 		table td {
@@ -3447,7 +3406,7 @@
 			max-width: 95%;
 			padding: 6em;
 			position: relative;
-			text-align: center;
+			text-align: right;
 			vertical-align: middle;
 			z-index: 1;
 		}

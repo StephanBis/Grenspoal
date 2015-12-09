@@ -40,7 +40,7 @@
 							<p>Tankstation Grenspoal is eigendom van brandstoffen <br> Tilmans-Pouls & Zoon NV uit Maaseik.</p>
 						</header>
 						
-						<table class="image">
+						<table class="prijzen">
 							<tr>
 								<td colspan="2"><strong>Liter prijzen</strong></td>
 							</tr>
@@ -68,7 +68,7 @@
 								if ($row->Naam !== "AdBlue")
 								{
 							?>
-								<tr>
+								<tr class="<?php echo $row->Css ?>">
 									<td><?php echo $row->Naam ?></td>
 									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
@@ -78,7 +78,7 @@
 								else
 								{
 							?>
-								<tr>
+								<tr class="<?php echo $row->Css ?>">
 									<td><?php echo $row->Naam ?> ®</td>
 									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
@@ -87,6 +87,10 @@
 							}
 						?>
 
+						<tr>
+							<td colspan="2"><a href="assets/Productspecificaties Grenspoal.zip">Download productspecificaties</a></td>
+						</tr>
+						
 						</table>
 					</div>
 				</section>
@@ -209,11 +213,11 @@
 				</section>	
 						<div class="content">
 							<div class="container">
-								<div class="row">
+								<div class="row breed">
 									<div class="3u 12u$(medium)">
 										<h3>Programma 1<br>BASIC</h3>
 										<table>
-											<tr>
+											<tr class="base">
 												<td>Innevelen velgen</td>
 											</tr>
 											<tr>
@@ -222,11 +226,11 @@
 											<tr>
 												<td>Brilliant Polish</td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
 											<tr>
 												<td>Drogen</td>
@@ -236,11 +240,11 @@
 										<table>
 											<tr>
 												<td>Zonder waspas</td>
-												<td>€9</td>
+												<td><strong>€ 9,00</strong></td>
 											</tr>
 											<tr>
 												<td>Met waspas</td>
-												<td>€8</td>
+												<td><strong>€ 8,00</strong></td>
 											</tr>
 										</table>
 									</div>
@@ -259,8 +263,8 @@
 											<tr>
 												<td>Brilliant Polish</td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
 											<tr>
 												<td>Drogen</td>
@@ -270,11 +274,11 @@
 										<table>
 											<tr>
 												<td>Zonder waspas</td>
-												<td>€11</td>
+												<td><strong>€ 11,00</strong></td>
 											</tr>
 											<tr>
 												<td>Met waspas</td>
-												<td>€10</td>
+												<td><strong>€ 10,00</strong></td>
 											</tr>
 										</table>
 									</div>
@@ -290,11 +294,11 @@
 											<tr>
 												<td>Nano wax</td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
 											<tr>
 												<td>Drogen</td>
@@ -304,11 +308,11 @@
 										<table>
 											<tr>
 												<td>Zonder waspas</td>
-												<td>€12</td>
+												<td><strong>€ 12,00</strong></td>
 											</tr>
 											<tr>
 												<td>Met waspas</td>
-												<td>€10,50</td>
+												<td><strong>€ 10,50</strong></td>
 											</tr>
 										</table>
 									</div>
@@ -338,11 +342,11 @@
 										<table>
 											<tr>
 												<td>Zonder waspas</td>
-												<td>€14</td>
+												<td><strong>€ 14,00</strong></td>
 											</tr>
 											<tr>
 												<td>Met waspas</td>
-												<td>€12,50</td>
+												<td><strong>€ 12,50</strong></td>
 											</tr>
 										</table>
 									</div>

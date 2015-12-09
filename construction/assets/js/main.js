@@ -6,11 +6,6 @@
 
 (function($) {
 
-	var $trHeight = $('.base').height();
-	$('.filler').each(function( index ) {
-		$(this).height($trHeight)
-	});
-
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
