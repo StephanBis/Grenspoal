@@ -27,6 +27,7 @@
 							<li><a href="rodediesel.html" class="scroll">Rode Diesel</a></li>
 							<li><a href="#two" class="scroll">Carwash</a></li>
 							<li><a href="#four" class="scroll">Waspas</a></li>
+							<li><a href="#seven" class="scroll">Wasboxen</a></li>
 							<li><a href="#six" class="scroll">Contact</a></li>
 						</ul>
 					</nav>
@@ -400,7 +401,7 @@
 				</section>
 			
 			<!-- Wasboxen -->
-				<section id="two" class="spotlight style2 right">
+				<section id="seven" class="spotlight style2 right">
 					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
 					<div class="content">
 						<header>							
