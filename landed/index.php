@@ -19,7 +19,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1 id="logo"><a href="index.php">Carwash & Fuel Grenspoal</a></h1>
+					<h1 id="logo"><a href="index.php"><img src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="#banner" class="scroll">Home</a></li>
