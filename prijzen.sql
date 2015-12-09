@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: 127.0.0.1
--- Gegenereerd op: 05 okt 2015 om 17:54
+-- Gegenereerd op: 09 dec 2015 om 15:37
 -- Serverversie: 5.6.21
 -- PHP-versie: 5.6.3
 
@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS `prijzen` (
 --
 
 INSERT INTO `prijzen` (`Id`, `Naam`, `Prijs`, `Datum`, `Css`) VALUES
-(1, 'Diesel', 1.792, '2015-10-05', 'geel'),
-(2, 'Euro 95', 1.456, '2015-10-05', 'groen'),
-(4, 'AdBlue', 1.123, '2015-10-05', 'blauw'),
-(5, 'Diesel rood EN590', 0.777, '2015-10-05', 'rood'),
-(34, 'Petroleum', 1.25, '2015-10-05', 'wit'),
-(36, 'Euro 98', 1.291, '2015-10-05', 'paars');
+(1, 'Diesel', 1.792, '2015-12-09', 'geel'),
+(2, 'Euro 95', 1.456, '2015-12-09', 'groen'),
+(4, 'AdBlue', 1.123, '2015-12-09', 'blauw'),
+(5, 'Diesel rood EN590', 0.777, '2015-12-09', 'rood'),
+(34, 'Petroleum', 1.25, '2015-12-09', 'wit'),
+(36, 'Euro 98', 1.291, '2015-12-09', 'paars');
 
 --
 -- Indexen voor geëxporteerde tabellen

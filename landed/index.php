@@ -46,45 +46,45 @@
 							</tr>
 						
 						<?php	
-							// $host = '127.0.0.1';
-							// $username = 'root';
-							// $password = 'pxl';
-							// $dbname = 'grenspoal';
+							$host = '127.0.0.1';
+							$username = 'grenspoal';
+							$password = 'Grenspoal123';
+							$dbname = 'grenspoal';
 							
-							// // Create connection
-							// $conn = new mysqli($host, $username, $password, $dbname);
-							// // Check connection
-							// if ($conn->connect_error) {
-								// die("Connection failed: " . $conn->connect_error);
-							// } 
+							// Create connection
+							$conn = new mysqli($host, $username, $password, $dbname);
+							// Check connection
+							if ($conn->connect_error) {
+								die("Connection failed: " . $conn->connect_error);
+							} 
 
-							// $dbh = mysql_connect( $host, $username, $password );
-							// mysql_select_db($dbname);
-							// $Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
-							// $sth = mysql_query($Sql, $dbh);
+							$dbh = mysql_connect( $host, $username, $password );
+							mysql_select_db($dbname);
+							$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
+							$sth = mysql_query($Sql, $dbh);
 							
-							// while( $row = mysql_fetch_object( $sth ) )
-							// {
-								// if ($row->Naam !== "AdBlue")
-								// {
+							while( $row = mysql_fetch_object( $sth ) )
+							{
+								if ($row->Naam !== "AdBlue")
+								{
 							?>
 								<tr>
-									<td><?php //echo $row->Naam ?></td>
-									<td>€ <span class="float"><?php //echo $row->Prijs ?></span></td>
+									<td><?php echo $row->Naam ?></td>
+									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
 
 							<?php								
-								// }
-								// else
-								// {
+								}
+								else
+								{
 							?>
 								<tr>
-									<td><?php //echo $row->Naam ?> ®</td>
-									<td>€ <span class="float"><?php //echo $row->Prijs ?></span></td>
+									<td><?php echo $row->Naam ?> ®</td>
+									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
 								</tr>
 							<?php		
-								// }
-							// }
+								}
+							}
 						?>
 
 						</table>
