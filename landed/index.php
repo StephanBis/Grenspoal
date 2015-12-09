@@ -377,22 +377,22 @@
 							<table>
 								<tr>
 									<td>Herlading van €100,-</td>
-									<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-									<td>€5,- gratis</td>
+									<td><i class="icon fa-long-arrow-right"></i></td>
+									<td>€ 5,00 gratis</td>
 								</tr>
 								<tr>
 									<td>Herlading van €250,-</td>
-									<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-									<td>€25,- gratis</td>
+									<td><i class="icon fa-long-arrow-right"></i></td>
+									<td>€ 25,00 gratis</td>
 								</tr>
 								<tr>
 									<td>Herlading van €500,-</td>
-									<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-									<td>€75,- gratis</td>
+									<td><i class="icon fa-long-arrow-right"></i></td>
+									<td>€ 75,00 gratis</td>
 								</tr>
 									<td>4x4, bestelwagen,... </td>
-									<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-									<td>+ €2,-</td>
+									<td><i class="icon fa-long-arrow-right"></i></td>
+									<td>+ € 2,00</td>
 								<tr>
 								</tr>
 							</table>
@@ -415,7 +415,7 @@
 				</section>	
 						<div class="content">
 							<div class="container">
-								<div class="row">
+								<div class="row breed">
 									<div class="4u 12u$(medium)">
 										<h3>Wasprogramma wasboxen</h3>
 										<table>
@@ -428,11 +428,11 @@
 											<tr>
 												<td>Brilliant Polish</td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
-											<tr>
-												<td>-</td>
+											<tr class="filler">
+												<td></td>
 											</tr>
 											<tr>
 												<td>Drogen</td>
@@ -444,18 +444,18 @@
 										<table>
 											<tr>
 												<td>5 muntjes</td>
-												<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-												<td>€5,-</td>
+												<td><i class="icon fa-long-arrow-right"></i></td>
+												<td>€ 5,00</td>
 											</tr>
 											<tr>
 												<td>10 muntjes + 1 muntje gratis</td>
-												<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-												<td>€10,-</td>
+												<td><i class="icon fa-long-arrow-right"></i></td>
+												<td>€ 10,00</td>
 											</tr>
 											<tr>
 												<td>20 muntjes + 2 muntjes gratis</td>
-												<td class="pijl"><img src="images/rodepijl.png" alt="Waspas"/></td>
-												<td>€20,-</td>
+												<td><i class="icon fa-long-arrow-right"></i></td>
+												<td>€ 20,00</td>
 											</tr>			
 										</table>
 									</div>
