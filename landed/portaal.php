@@ -37,8 +37,8 @@
 						<?php	
 							
 							$host = '127.0.0.1';
-							$username = 'root';
-							$password = 'pxl';
+							$username = 'grenspoal';
+							$password = 'Grenspoal123';
 							$dbname = 'grenspoal';
 							
 							if (isset($_POST["opslaan"])) 
