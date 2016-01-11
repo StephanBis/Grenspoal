@@ -94,8 +94,8 @@
 							function getPrijzen()
 							{
 								$host = '127.0.0.1';
-								$username = 'root';
-								$password = 'pxl';
+								$username = 'grenspoal';
+								$password = 'Grenspoal123';
 								$dbname = 'grenspoal';
 								
 								$dbh = mysql_connect( $host, $username, $password );
