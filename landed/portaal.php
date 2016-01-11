@@ -169,7 +169,37 @@
 					</form>
 				</div>
 			</section>
-
+			<section id="banner">
+				<div class="content" style="text-align: center;">
+					<h2>Klantenbestand<br></h2>
+					<p>Hieronder kunt u het klantenbestand downloaden of een mail versturen.</p>
+					<form method="post" action="excel.php">								
+						<input id="excel" name="excel" type="submit" value="Klantenbestand downloaden">
+					</form>
+					
+					<?php
+						$host = '127.0.0.1';
+						$username = 'grenspoal';
+						$password = 'Grenspoal123';
+						$dbname = 'grenspoal';
+						$emails = "";
+						
+						$dbh = mysql_connect( $host, $username, $password );
+						mysql_select_db($dbname);
+						$Sql = "SELECT * FROM mailing";
+						$sth = mysql_query($Sql, $dbh);
+						
+						while( $row = mysql_fetch_object( $sth ) )
+						{
+							$emails .= $row->Email . ";";
+						}
+					?>
+					
+					<form method="post" action="<?php echo "mailto:$emails?SUBJECT=Nieuwsbrief&BODY=Uw bericht..." ?>">								
+						<input id="email" name="email" type="submit" value="E-mail versturen">
+					</form>
+				</div>
+			</section>
 		</div>
 
 		<!-- Scripts -->
