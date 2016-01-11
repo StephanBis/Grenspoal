@@ -14,7 +14,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1 id="logo"><a href="index.php"><img src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a></h1>
+					<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 					<nav id="nav">
 						<ul>
 							<li><a href="#banner" class="scroll">Home</a></li>
@@ -112,17 +112,17 @@
 						</header> -->
 						<div class="box alt">
 							<div class="row uniform">
-								<section class="4u 6u(medium) 12u$(xsmall)">
-									<span class="icon alt major"><img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></span>
+								<section class="4u 6u(large) 12u$(medium)">
+									<span class="icon alt major"><a target="_blank"  href="http://www.tilmans-pouls.be/"> <img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></a></span>
 									<h3>Tilmans-Pouls & Zoon NV</h3>
 									<p>Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.</p>
 								</section>
-								<section class="4u 6u$(medium) 12u$(xsmall)">
+								<section class="4u 6u$(large) 12u$(medium)">
 									<span class="icon alt major fa-map-marker"></span>
 									<h3>Vlak aan de grens met Nederland</h3>
 									<p>Omdat het station op de grens met Nederland gelegen is, hebben wij een aparte tankpiste voorzien voor land- en tuinbouwvoertuigen die vanuit Nederland rode diesel kunnen tanken aan een zeer voordelige prijs. Momenteel is er een prijsverschil van ongeveer 50 eurocent per liter tussen rode diesel en witte diesel !! Als u als Nederlandse land- of tuinbouwer kan aantonen dat u in België getankt heeft mag u immers met rode diesel in de daartoe bestemde tank van het voertuig terug naar Nederland.</p>
 								</section>
-								<section class="4u$ 6u(medium) 12u$(xsmall)">
+								<section class="4u$ 6u(large) 12u$(medium)">
 									<span class="icon alt major fa-shopping-cart"></span>
 									<h3>Shop</h3>
 									<p>Voor de opstelling van een factuur werken wij met een eigen tankkaart die voor u aangemaakt kan worden en de volgende dag reeds beschikbaar ligt in de shop. Hier kan u elke dag verse broodjes, koffie, gekoelde dranken en snacks nuttigen. Deze is trouwens ook voorzien van een ruim assortiment aan tabakswaren. Goedkoop tanken in Kinrooi - Molenbeersel. De service met een glimlach.</p>
@@ -144,33 +144,33 @@
 								<table>
 									<tr>
 										<td>Maandag:</td>
-										<td>6.00u - 20.00u</td>
+										<td>7.00u - 20.00u</td>
 									</tr>
 									<tr>
 										<td>Dinsdag:</td>
-										<td>6.00u - 20.00u</td>
+										<td>7.00u - 20.00u</td>
 									</tr>
 									<tr>
 										<td>Woensdag:</td>
-										<td>6.00u - 20.00u</td>
+										<td>7.00u - 20.00u</td>
 									</tr>
 									<tr>
 										<td>Donderdag:</td>
-										<td>6.00u - 20.00u</td>
+										<td>7.00u - 20.00u</td>
 									</tr>
 									<tr>
 										<td>Vrijdag:</td>
-										<td>6.00u - 20.00u</td>
+										<td>7.00u - 20.00u</td>
 									</tr>
 									<tr>
 										<td>Zaterdag:</td>
-										<td>9.00u - 20.00u</td>
+										<td>8.00u - 18.00u</td>
 									</tr>
 									<tr>
 										<td>Zondag:</td>
-										<td>9.00u - 20.00u</td>
+										<td>9.00u - 18.00u</td>
 									</tr>
-								</table>
+								</table>								
 								<br>
 						</header>						
 					</div>

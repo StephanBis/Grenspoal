@@ -1,6 +1,16 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
+.logo {
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+.scroll:hover {
+	color: #fcfcfc !important;
+}
+
+
 .breed h3 {
 	text-align: center;
 	margin-top: 20px;
@@ -42,6 +52,7 @@
 	width: 50%;
 	text-align: right;
 	border-collapse: initial;
+	color: #fcfcfc;
 }
 
 #toTop {
@@ -124,6 +135,7 @@
 	.container {
 		margin-left: auto;
 		margin-right: auto;
+		box-shadow: 0 0.25em 0.5em 0 rgba(255, 255, 255, 0.25);
 	}
 
 	.container.\31 25\25 {
@@ -1614,7 +1626,8 @@
 /* Basic */
 
 	html, body {
-		background: #1c1d26;
+		background: #fcfcfc;
+		/* background: #1c1d26; */
 	}
 
 	body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1629,7 +1642,8 @@
 	}
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.75);
+		color: #1C1D26;
+		/* color: rgba(255, 255, 255, 0.75); */
 		font-family: "Roboto", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 100;
@@ -1641,13 +1655,13 @@
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #e44c65;
+		/* border-bottom: dotted 1px; */
+		color: #C4280B;
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #e44c65 !important;
+			color: #E44C65 !important;
 			border-bottom-color: transparent;
 		}
 
@@ -1665,7 +1679,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #C4280B;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -2164,7 +2178,7 @@
 	}
 
 	header p {
-		color: #ffffff;
+		color: #1C1D26;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2196,7 +2210,7 @@
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: #C4280B;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2262,7 +2276,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #e44c65;
+			border-color: #C4280B;
 		}
 
 	.select-wrapper {
@@ -2380,7 +2394,7 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e44c65;
+			border-color: #C4280B;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2477,7 +2491,8 @@
 			}
 
 		.icon.major {
-			background: #272833;
+			background: #C4280B;
+			/* background: #272833; */
 			border-radius: 100%;
 			cursor: default;
 			display: inline-block;
@@ -2506,8 +2521,10 @@
 				}
 
 				.icon.major.alt:before {
-					color: #272833 !important;
-					text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
+					color: #fcfcfc !important;
+					/* color: #272833 !important; */
+					text-shadow: 1.5px 0 0 #000000, -1.5px 0 0 #000000, 0 1.5px 0 #000000, 0 -1.5px 0 #000000;
+					border-color: black;
 				}
 
 /* Image */
@@ -2584,10 +2601,11 @@
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
+		padding-top: 15px;
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			/* padding-left: 0.5em; */
 		}
 
 		ul.alt {
@@ -2802,8 +2820,8 @@
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #e44c65;
-			color: #e44c65 !important;
+			box-shadow: inset 0 0 0 1px #C4280B;
+			color: #C4280B !important;
 		}
 
 		input[type="submit"]:active,
@@ -2847,7 +2865,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #e44c65;
+			background-color: #C4280B;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -3032,7 +3050,8 @@
 			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
 			transition: transform 1s ease, opacity 1s ease;
-			background: rgba(23, 24, 32, 0.95);
+			background: #fcfcfc;
+			/* background: rgba(23, 24, 32, 0.95); */
 			border-style: solid;
 			opacity: 1;
 			position: absolute;
@@ -3088,15 +3107,15 @@
 		}
 
 		.spotlight.style1 .content {
-			border-color: #e44c65;
+			border-color: #C4280B;
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: #C4280B;
 		}
 
 		.spotlight.style3 .content {
-			border-color: #39c088;
+			border-color: #C4280B;
 		}
 
 		.spotlight.inactive .content {
@@ -3147,10 +3166,11 @@
 
 	.wrapper {
 		padding: 6em 0 4em 0;
+		box-shadow: 0 0.25em 0.5em 0 rgba(255, 255, 255, 0.25);
 	}
 
 		.wrapper.style2 {
-			background: #e44c65;
+			background: #C4280B;
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3185,7 +3205,7 @@
 			.wrapper.style2 input[type="button"].special,
 			.wrapper.style2 .button.special {
 				background-color: #ffffff;
-				color: #e44c65 !important;
+				color: #C4280B !important;
 			}
 
 				.wrapper.style2 input[type="submit"].special:hover, .wrapper.style2 input[type="submit"].special:active,
@@ -3289,7 +3309,7 @@
 			}
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
-				color: #e44c65;
+				color: #C4280B;
 			}
 
 		.dropotron.level-0 {
@@ -3326,7 +3346,8 @@
 		background: rgba(39, 40, 51, 0.965);
 		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 		cursor: default;
-		height: 3.5em;
+		height: 8.5em;
+		/* height: 3.5em; */
 		left: 0;
 		line-height: 3.5em;
 		position: fixed;
@@ -3356,16 +3377,23 @@
 
 				#header nav ul li {
 					display: inline-block;
-					margin-left: 1em;
+					/* margin-left: 1em; */
 				}
 
 					#header nav ul li a, #header nav ul li span {
 						border: 0;
-						color: inherit;
+						border-radius: 15px;
+						color: white;
+						/* color: inherit; */
 						display: inline-block;
 						height: inherit;
 						line-height: inherit;
 						outline: 0;
+						font-size: 25px;
+						background-color: #C4280B;
+						width: 135px;
+						text-align: center;
+						
 					}
 
 						#header nav ul li a.button, #header nav ul li span.button {
@@ -3379,7 +3407,7 @@
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
+						color: #C4280B;
 					}
 
 					#header nav ul li > ul {
@@ -3391,7 +3419,8 @@
 	}
 
 	body.landing #header {
-		background: transparent;
+		background-color: #fcfcfc;
+		/* background: transparent; */
 		box-shadow: none;
 		position: absolute;
 	}
@@ -3858,7 +3887,7 @@
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: #C4280B;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;
