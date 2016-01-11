@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Carwash & Fuel Grenspoal</title>
@@ -46,12 +41,13 @@
 								<td colspan="2"><strong>Liter prijzen</strong></td>
 							</tr>
 						
-						<?php	
+						<?php
+							session_start();
 							$host = '127.0.0.1';
 							$username = 'grenspoal';
 							$password = 'Grenspoal123';
 							$dbname = 'grenspoal';
-							
+
 							// Create connection
 							$conn = new mysqli($host, $username, $password, $dbname);
 							// Check connection
@@ -64,26 +60,37 @@
 							$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
 							$sth = mysql_query($Sql, $dbh);
 							
-							while( $row = mysql_fetch_object( $sth ) )
+							if (mysql_num_rows($sth) === 0)
 							{
-								if ($row->Naam !== "AdBlue")
+								?>
+									<tr>
+										<td></td>
+										<td>Er zijn geen prijzen opgegeven voor vandaag!</td>
+									</tr>
+								<?php
+							}
+							else
+							{
+								while($row = mysql_fetch_object( $sth ))
 								{
-							?>
-								<tr class="<?php echo $row->Css ?>">
-									<td><?php echo $row->Naam ?></td>
-									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
-								</tr>
-
-							<?php								
-								}
-								else
-								{
-							?>
-								<tr class="<?php echo $row->Css ?>">
-									<td><?php echo $row->Naam ?> ®</td>
-									<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
-								</tr>
-							<?php		
+									if ($row->Naam !== "AdBlue")
+									{
+								?>
+									<tr class="<?php echo $row->Css ?>">
+										<td><?php echo $row->Naam ?></td>
+										<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+									</tr>
+								<?php								
+									}
+									else
+									{
+								?>
+									<tr class="<?php echo $row->Css ?>">
+										<td><?php echo $row->Naam ?> ®</td>
+										<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+									</tr>
+								<?php		
+									}
 								}
 							}
 						?>
@@ -470,12 +477,44 @@
 					<div class="container">
 						<header>
 							<h2>Contact</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
 						</header>
-						<form method="post" action="#" class="container 50%">
+						<form method="post" action="mail.php" class="container 100%">
 							<div class="row uniform 50%">
-								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
+								<div class="6u 12u$(xsmall)">
+									<div class="row uniform 50%">
+								<div class="12u 12u$(xsmall)"><input type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
+								</div>
+								<div class="row uniform 50%">
+									<div class="12u 12u$(xsmall)"><input type="email" maxlength="250" name="email" id="email" placeholder="E-mailadres" required /></div>
+								</div>
+								<div class="row uniform 50%">
+									<div class="12u 12u$(xsmall)"><textarea name="bericht" maxlength="250" id="bericht" placeholder="Bericht" required></textarea></div>
+								</div>
+								<div class="row uniform 50%">
+									<div class="12u 12u$(xsmall)"><input type="checkbox" id="nieuwsbrief" name="nieuwsbrief" value="Nieuwsbrief" checked /> <label for="nieuwsbrief">Aanmelden voor nieuwsbrief</label></div>
+								</div>
+								<div class="row uniform 50%">
+									<div class="12u$ 12u$(xsmall)"><input type="submit" value="Verzend bericht" class="fit" /></div>
+								</div>
+								<div class="row uniform 50%">
+									<div class="12u$ 12u$(xsmall)">
+										<?php
+											if (isset($_SESSION["message"]))
+											{
+												?>
+													<div class="alert alert-success">
+														<?php echo $_SESSION["message"]; ?>
+													</div>
+												<?php
+												unset($_SESSION["message"]);
+											}
+										?>
+									</div>
+								</div>
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.0785208930592!2d5.724182615758003!3d51.18077567958276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0cd113493231d%3A0xce3b2dd097cf7e30!2sSoftwashexpress+Molenbeersel!5e0!3m2!1snl!2snl!4v1452529183865" width="600" height="450" style="border:0" allowfullscreen></iframe>
+								</div>
 							</div>
 						</form>
 					</div>
@@ -501,39 +540,39 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.counterup.js"></script>
-			<script src="assets/js/jquery.waypoints.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script type="text/javascript" src="assets/js/move-top.js"></script>
-			<script type="text/javascript" src="assets/js/easing.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			
-			<script>
-				jQuery(document).ready(function( $ ) {
-					$('.float').counterUp({
-						delay: 10, // the delay time in ms
-						time: 1800 // the speed time in ms
-					});
-					
-					//dit zorgt er normaal voor dat hij scrolled.. maar werkt nog niet
-					$(".scroll").on('click','a', function(event){ 
-						event.preventDefault();
-						var o =  $( $(this).attr("href") ).offset();   
-						var sT = o.top - $(".spotlight style3 left").outerHeight(true); // get the fixedbar height
-						// compute the correct offset and scroll to it.
-						//window.scrollTo(0,sT);
-						$('html,body').animate({scrollTop:sT},1000);
-
-					});
-					
-					$().UItoTop({ easingType: 'easeOutQuad' });
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.counterup.js"></script>
+		<script src="assets/js/jquery.waypoints.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script type="text/javascript" src="assets/js/move-top.js"></script>
+		<script type="text/javascript" src="assets/js/easing.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		
+		<script>
+			jQuery(document).ready(function( $ ) {
+				$('.float').counterUp({
+					delay: 10, // the delay time in ms
+					time: 1800 // the speed time in ms
 				});
-			</script>
+				
+				//dit zorgt er normaal voor dat hij scrolled.. maar werkt nog niet
+				$(".scroll").on('click','a', function(event){ 
+					event.preventDefault();
+					var o =  $( $(this).attr("href") ).offset();   
+					var sT = o.top - $(".spotlight style3 left").outerHeight(true); // get the fixedbar height
+					// compute the correct offset and scroll to it.
+					//window.scrollTo(0,sT);
+					$('html,body').animate({scrollTop:sT},1000);
+
+				});
+				
+				$().UItoTop({ easingType: 'easeOutQuad' });
+			});
+		</script>
 	</body>
 </html>
