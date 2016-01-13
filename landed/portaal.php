@@ -30,6 +30,22 @@
 			<!-- Banner -->
 			<section id="banner">
 				<div class="content" style="text-align: center;">
+					<!-- TAB -->
+					<ul>
+					  <li>
+						<a href="javascript:activateTab('page1')">Tab 1</a>
+					  </li>
+					  <li>
+						<a href="javascript:activateTab('page2')">Tab 2</a>
+					  </li>
+					  ...
+					</ul>
+					<div id="tabCtrl">
+					  <div id="page1" style="display: block;">Page 1</div>
+					  <div id="page2" style="display: none;">Page 2</div>
+					  ...
+					</div>
+					
 					<h2>Instellen prijzen<br></h2>
 					<p>Onderstaande prijzen zijn de prijzen van deze dag.</p>
 					<form method="post" action="portaal.php">
@@ -211,6 +227,19 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
 
+			  function activateTab(pageId) {
+				  var tabCtrl = document.getElementById('tabCtrl');
+				  var pageToActivate = document.getElementById(pageId);
+				  for (var i = 0; i < tabCtrl.childNodes.length; i++) {
+					  var node = tabCtrl.childNodes[i];
+					  if (node.nodeType == 1) { /* Element */
+						  node.style.display = (node == pageToActivate) ? 'block' : 'none';
+					  }
+				  }
+			  }
+
+			</script>
 	</body>
 </html>
