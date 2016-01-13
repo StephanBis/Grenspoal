@@ -131,6 +131,70 @@
 						</div>						
 					</div>
 				</section>
+				
+			<!-- Nieuws -->
+				<section id="five" class="wrapper style1 special fade-up">
+					<div class="container">
+						<header>
+							<h2>Nieuws</h2>
+						</header>
+						<div class="box alt">
+							<?php 
+								$host = '127.0.0.1';
+								$username = 'grenspoal';
+								$password = 'Grenspoal123';
+								$dbname = 'grenspoal';
+
+								// Create connection
+								$conn = new mysqli($host, $username, $password, $dbname);
+								// Check connection
+								if ($conn->connect_error) {
+									die("Connection failed: " . $conn->connect_error);
+								} 
+
+								$dbh = mysql_connect( $host, $username, $password );
+								mysql_select_db($dbname);
+								$Sql = "SELECT * FROM nieuws ORDER BY Datum desc";
+								$sth = mysql_query($Sql, $dbh);
+								
+								$index = 4;
+								
+								if (mysql_num_rows($sth) === 0)
+								{
+									?>
+										<div class="row uniform">
+											Er is op dit moment geen nieuws!
+										</div>
+									<?php
+								}
+								else
+								{
+									while($row = mysql_fetch_object( $sth ))
+									{
+										if ($index === 0)
+										{
+											break;
+										}
+										else
+										{
+											$index--;
+											
+											?>
+												<div class="row uniform">
+													<section class="12u 6u(large) 12u$(medium)">
+														<span class="icon alt major"><?php echo $row->Datum; ?></span>
+														<h3><?php echo $row->Titel; ?></h3>
+														<p><?php echo $row->Beschrijving; ?></p>
+													</section>
+												</div>
+											<?php
+										}
+									}
+								}
+							?>
+						</div>						
+					</div>
+				</section>
 			
 			<!-- Shop -->
 				<section id="one" class="spotlight style3 left">
