@@ -181,10 +181,11 @@
 											
 											?>
 												<div class="row uniform">
-													<section class="12u 6u(large) 12u$(medium)">
-														<span class="icon alt major"><?php echo $row->Datum; ?></span>
+													<section class="12u 6u(large) 12u$(medium) news">
+														<span class="icon alt major"><?php $date = new DateTime($row->Datum); echo $date->format('d-m-Y'); ?></span>
 														<h3><?php echo $row->Titel; ?></h3>
 														<p><?php echo $row->Beschrijving; ?></p>
+														<hr>
 													</section>
 												</div>
 											<?php
