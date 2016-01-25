@@ -19,7 +19,7 @@
 						<ul>
 							<li><a href="#banner" class="scroll">Home</a></li>
 							<li><a href="#one" class="scroll">Shop</a></li>
-							<li><a href="rodediesel.html" class="scroll">Rode Diesel</a></li>
+							<li><a href="rodediesel.php" class="scroll">Rode Diesel</a></li>
 							<li><a href="#two" class="scroll">Carwash</a></li>
 							<li><a href="#four" class="scroll">Waspas</a></li>
 							<li><a href="#seven" class="scroll">Wasboxen</a></li>
