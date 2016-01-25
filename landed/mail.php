@@ -4,7 +4,7 @@
 	{
 		if ($_POST["nieuwsbrief"] === "Nieuwsbrief")
 		{
-			$servername = "127.0.0.1";
+			$servername = "85.10.205.173:3306";
 			$username = "grenspoal";
 			$password = "Grenspoal123";
 			$dbname = "grenspoal";

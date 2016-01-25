@@ -43,7 +43,7 @@
 						
 						<?php
 							session_start();
-							$host = '127.0.0.1';
+							$host = '85.10.205.173:3306';
 							$username = 'grenspoal';
 							$password = 'Grenspoal123';
 							$dbname = 'grenspoal';
@@ -140,7 +140,7 @@
 						</header>
 						<div class="box alt">
 							<?php 
-								$host = '127.0.0.1';
+								$host = '85.10.205.173:3306';
 								$username = 'grenspoal';
 								$password = 'Grenspoal123';
 								$dbname = 'grenspoal';
