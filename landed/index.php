@@ -115,7 +115,15 @@
 								<section class="4u 6u(large) 12u$(medium)">
 									<span class="icon alt major"><a target="_blank"  href="http://www.tilmans-pouls.be/"> <img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></a></span>
 									<h3>Tilmans-Pouls & Zoon NV</h3>
-									<p>Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.</p>
+									<p>
+									Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. 
+									Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. 
+									Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.
+									<br>
+									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.tilmans-pouls.be/">  Link naar Tilmans-Pouls</a>
+									</p>
+									
+									
 								</section>
 								<section class="4u 6u$(large) 12u$(medium)">
 									<span class="icon alt major fa-map-marker"></span>
@@ -248,7 +256,12 @@
 						<header>
 							<img src="images/softwash.png" alt="Softwash Express" height="100%" width="100%">
 							<h2>Welkom in onze carwash</h2>
-							<p>In enkele minuten een mooie glimmende wagen.</p>
+							<p>
+							In enkele minuten een mooie glimmende wagen.
+							<br>
+							<br>
+							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/">  Link naar Softwash Express</a>
+							</p>
 							
 							<h3>Openingsuren:</h3>
 								<table>
@@ -441,7 +454,12 @@
 						<header>
 							<h2>Waspas</h2>
 							<p>Hoe meer u herlaadt, hoe meer korting!</p>							
-							<p>Onze waspas is beschikbaar vanaf €50.</p>
+							<p>
+							Onze waspas is beschikbaar vanaf €50. Er zijn meerdere herlaadmogelijkheden
+							<br>
+							<br>
+							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/index/be-nl/8660/">  Waspas online bestellen</a>
+							</p>
 							<img src="images/waspas.png" alt="Waspas" />
 							<br>
 							<br>
@@ -541,19 +559,19 @@
 				<section id="six" class="wrapper style2 special fade">
 					<div class="container">
 						<header>
-							<h2>Contact</h2>
+							<h2 style="color:#fcfcfc;">Contact</h2>
 						</header>
 						<form method="post" action="mail.php" class="container 100%">
 							<div class="row uniform 50%">
 								<div class="6u 12u$(xsmall)">
 									<div class="row uniform 50%">
-								<div class="12u 12u$(xsmall)"><input type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
+								<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
 								</div>
 								<div class="row uniform 50%">
-									<div class="12u 12u$(xsmall)"><input type="email" maxlength="250" name="email" id="email" placeholder="E-mailadres" required /></div>
+									<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="email" maxlength="250" name="email" id="email" placeholder="E-mailadres" required /></div>
 								</div>
 								<div class="row uniform 50%">
-									<div class="12u 12u$(xsmall)"><textarea name="bericht" maxlength="250" id="bericht" placeholder="Bericht" required></textarea></div>
+									<div class="12u 12u$(xsmall)"><textarea style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" name="bericht" maxlength="250" id="bericht" placeholder="Bericht" required></textarea></div>
 								</div>
 								<div class="row uniform 50%">
 									<div class="12u 12u$(xsmall)"><input type="checkbox" id="nieuwsbrief" name="nieuwsbrief" value="Nieuwsbrief" checked /> <label for="nieuwsbrief">Aanmelden voor nieuwsbrief</label></div>
@@ -588,7 +606,7 @@
 			<!-- Footer -->
 				<footer id="footer">					
 					<ul class="copyright">
-						<li>&copy; Bisschop Software</li>
+						<li><a target="_blank"  href="http://bisschop-software.nl/">&copy; Bisschop Software<a></li>
 					</ul>
 				</footer>
 				
