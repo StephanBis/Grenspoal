@@ -18,6 +18,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#banner" class="scroll">Home</a></li>
+							<!-- <li><a href="#eight" class="scroll">Nieuws</a></li> -->
 							<li><a href="#one" class="scroll">Shop</a></li>
 							<li><a href="rodediesel.php" class="scroll">Rode Diesel</a></li>
 							<li><a href="#two" class="scroll">Carwash</a></li>
@@ -141,7 +142,7 @@
 				</section>
 				
 			<!-- Nieuws -->
-				<section id="five" class="wrapper style1 special fade-up">
+				<section id="eight" class="wrapper style1 special fade-up">
 					<div class="container">
 						<header>
 							<h2>Nieuws</h2>
@@ -563,39 +564,39 @@
 						</header>
 						<form method="post" action="mail.php" class="container 100%">
 							<div class="row uniform 50%">
-								<div class="6u 12u$(xsmall)">
+								<div class="6u 12u$(xmedium)">
 									<div class="row uniform 50%">
-								<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
-								</div>
-								<div class="row uniform 50%">
-									<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="email" maxlength="250" name="email" id="email" placeholder="E-mailadres" required /></div>
-								</div>
-								<div class="row uniform 50%">
-									<div class="12u 12u$(xsmall)"><textarea style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" name="bericht" maxlength="250" id="bericht" placeholder="Bericht" required></textarea></div>
-								</div>
-								<div class="row uniform 50%">
-									<div class="12u 12u$(xsmall)"><input type="checkbox" id="nieuwsbrief" name="nieuwsbrief" value="Nieuwsbrief" checked /> <label for="nieuwsbrief">Aanmelden voor nieuwsbrief</label></div>
-								</div>
-								<div class="row uniform 50%">
-									<div class="12u$ 12u$(xsmall)"><input type="submit" value="Verzend bericht" class="fit" /></div>
-								</div>
-								<div class="row uniform 50%">
-									<div class="12u$ 12u$(xsmall)">
-										<?php
-											if (isset($_SESSION["message"]))
-											{
-												?>
-													<div class="alert alert-success">
-														<?php echo $_SESSION["message"]; ?>
-													</div>
-												<?php
-												unset($_SESSION["message"]);
-											}
-										?>
+										<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
+									</div>
+									<div class="row uniform 50%">
+										<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="email" maxlength="250" name="email" id="email" placeholder="E-mailadres" required /></div>
+									</div>
+									<div class="row uniform 50%">
+										<div class="12u 12u$(xsmall)"><textarea style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" name="bericht" maxlength="250" id="bericht" placeholder="Bericht" required></textarea></div>
+									</div>
+									<div class="row uniform 50%">
+										<div class="12u 12u$(xsmall)"><input type="checkbox" id="nieuwsbrief" name="nieuwsbrief" value="Nieuwsbrief" checked /> <label for="nieuwsbrief">Aanmelden voor nieuwsbrief</label></div>
+									</div>
+									<div class="row uniform 50%">
+										<div class="12u$ 12u$(xsmall)"><input type="submit" value="Verzend bericht" class="fit" /></div>
+									</div>
+									<div class="row uniform 50%">
+										<div class="12u$ 12u$(xsmall)">
+											<?php
+												if (isset($_SESSION["message"]))
+												{
+													?>
+														<div class="alert alert-success">
+															<?php echo $_SESSION["message"]; ?>
+														</div>
+													<?php
+													unset($_SESSION["message"]);
+												}
+											?>
+										</div>
 									</div>
 								</div>
-								</div>
-								<div class="6u 12u$(xsmall)">
+								<div class="6u 12u$(xmedium)">
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.0785208930592!2d5.724182615758003!3d51.18077567958276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0cd113493231d%3A0xce3b2dd097cf7e30!2sSoftwashexpress+Molenbeersel!5e0!3m2!1snl!2snl!4v1452529183865" width="600" height="450" style="border:0" allowfullscreen></iframe>
 								</div>
 							</div>

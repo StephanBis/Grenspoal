@@ -161,10 +161,10 @@
 															-webkit-transition: border-color 0.2s ease-in-out;
 															-ms-transition: border-color 0.2s ease-in-out;
 															transition: border-color 0.2s ease-in-out;
-															background: transparent;
+															background: #fcfcfc;
 															border-radius: 4px;
 															border: solid 1px rgba(196, 40, 11, 0.7);
-															color: inherit;
+															color: #1C1D26;
 															display: block;
 															outline: 0;
 															padding: 0 1em;
@@ -223,13 +223,52 @@
 								<form method="post" action="nieuws.php">	
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<input class="textarea" id="titel" name="titel" type="text" maxlength="50" placeholder="Titel" required>									
+											<input class="textarea" id="titel" style="
+															-moz-appearance: none;
+															-webkit-appearance: none;
+															-ms-appearance: none;
+															appearance: none;
+															-moz-transition: border-color 0.2s ease-in-out;
+															-webkit-transition: border-color 0.2s ease-in-out;
+															-ms-transition: border-color 0.2s ease-in-out;
+															transition: border-color 0.2s ease-in-out;
+															background: #fcfcfc;
+															border-radius: 4px;
+															border: solid 1px rgba(196, 40, 11, 0.7);
+															color: #1C1D26;
+															display: block;
+															outline: 0;
+															padding: 0 1em;
+															text-decoration: none;
+															width: 100%;"
+											
+											
+											name="titel" type="text" maxlength="50" placeholder="Titel" required>									
 										</div>
 									</div>
 									
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<textarea id="omschrijving" name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
+											<textarea id="omschrijving" style="
+															-moz-appearance: none;
+															-webkit-appearance: none;
+															-ms-appearance: none;
+															appearance: none;
+															-moz-transition: border-color 0.2s ease-in-out;
+															-webkit-transition: border-color 0.2s ease-in-out;
+															-ms-transition: border-color 0.2s ease-in-out;
+															transition: border-color 0.2s ease-in-out;
+															background: #fcfcfc;
+															border-radius: 4px;
+															border: solid 1px rgba(196, 40, 11, 0.7);
+															color: #1C1D26;
+															display: block;
+															outline: 0;
+															padding: 0 1em;
+															text-decoration: none;
+															width: 100%;"
+											
+											name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
 										</div>
 									</div>
 									
