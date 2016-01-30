@@ -71,6 +71,19 @@
 	color: #1C1D26;
 }
 
+.programma {
+	margin: 0;
+	padding: 0;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+	
+}
+
 #toTop {
 	display: none;
 	text-decoration: none;
@@ -3117,7 +3130,7 @@
 
 		.spotlight.left .content, .spotlight.right .content {
 			height: 101%;
-			padding: 6em 3em;
+			padding: 3em 3em;
 			top: 0;
 			width: 28em;
 		}
@@ -3469,7 +3482,7 @@
 	} */
 
 	#banner {
-		/* background-image: url("../../images/carwash.jpg"); */
+		background-image: url("Grenspoal/landed/images/carwash.jpg");
 		background-attachment: fixed;
 		/* background-color: #272833;
 		background-image: url("../../images/banner.jpg"); */
@@ -3493,10 +3506,10 @@
 
 		#banner:after {
 			background: rgb(220, 220, 220);
-			/* background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
-			/* background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
-			/* background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
-			/* background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
+			/* background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
 			content: '';
 			display: block;
 			height: 100%;

@@ -260,7 +260,6 @@
 							<p>
 							In enkele minuten een mooie glimmende wagen.
 							<br>
-							<br>
 							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/">  Link naar Softwash Express</a>
 							</p>
 							
@@ -295,10 +294,12 @@
 										<td>9.00u - 12.00u</td>
 									</tr>
 								</table>
+								<br>
+								<br>
 						</header>
 					</div>				
 				</section>	
-						<div class="content">
+						<div class="programma">
 							<div class="container">
 								<div class="row breed">
 									<div class="3u 12u$(medium)">

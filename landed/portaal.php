@@ -120,7 +120,8 @@
 													<label for="<?php echo $row->Naam ?>"><?php echo $row->Naam ?>: </label>										
 												</div>
 												<div class="6u 12u$(xsmall)">
-													<input id="<?php echo $row->Naam ?>" style="
+													
+														<input id="<?php echo $row->Naam ?>" style="
 														-moz-appearance: none;
 														-webkit-appearance: none;
 														-ms-appearance: none;
@@ -129,16 +130,20 @@
 														-webkit-transition: border-color 0.2s ease-in-out;
 														-ms-transition: border-color 0.2s ease-in-out;
 														transition: border-color 0.2s ease-in-out;
-														background: transparent;
+														background: #fcfcfc;
 														border-radius: 4px;
-														border: solid 1px rgba(255, 255, 255, 0.3);
+														border: solid 1px #C4280B;
 														color: inherit;
 														display: block;
 														outline: 0;
 														padding: 0 1em;
 														text-decoration: none;
-														width: 100%;" 
-													name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">	
+														width: 100%; 
+														height: 1.75em;
+														line-height: 1.75em;"
+														name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
+													
+														
 												</div>
 											</div>
 											<?php								
