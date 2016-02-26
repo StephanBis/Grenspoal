@@ -35,7 +35,7 @@
 							<div class="content" style="text-align: center;">
 								<h2>Prijzen<br></h2>
 								<p>Hieronder kunt u prijzen voor een bepaalde dag instellen.</p>
-								<form method="post" action="portaal.php">
+								<form method="post" action="portaal.php" class="form">
 									
 									<?php										
 										if (isset($_POST["opslaan"])) 
@@ -55,10 +55,13 @@
 												echo "Error updating record: " . $conn->error;
 											} 
 											
+											$kleuren = ['geel','groen','blauw','rood','wit','paars'];
+											$i = 0;
+
 											foreach ($_POST as $param_name => $param_val) {
-												if ($param_name !== "opslaan"  && $param_name !== "datum")
+												if ($param_name !== "opslaan" && $param_name !== "datum" && $param_name !== "css")
 												{
-													$sql = "INSERT INTO prijzen (Naam, Prijs, Datum) VALUES ('" . str_replace('_', ' ', $param_name) . "','" . sprintf('%0.3f',$param_val) . "','" . $_POST['datum'] . "')";
+													$sql = "INSERT INTO prijzen (Naam, Prijs, Datum, Css) VALUES ('" . str_replace('_', ' ', $param_name) . "','" . sprintf('%0.3f',$param_val) . "','" . $_POST['datum'] . "','" . $kleuren[$i] . "')";
 													//$sql = "UPDATE prijzen SET Prijs=" . sprintf('%0.3f',$param_val) . " WHERE Naam='" . str_replace("_", " ", $param_name) . "'";
 													
 													//echo $param_name . " = " . $param_val . " - " . $sql . "<br>";
@@ -66,6 +69,8 @@
 													if ($conn->query($sql) !== TRUE) {
 														echo "<p style='color: red;'>Fout bij het updaten van de prijzen: " . $conn->error . "</p>";
 													} 
+
+													$i++;
 												}
 											}
 											
@@ -110,6 +115,7 @@
 												<div class="6u 12u$(xsmall)">
 													<input id="<?php echo $row->Naam ?>" class="dashboard-control" name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
 												</div>
+												<input id="css" name="css" type="hidden" value="<?php echo $row->Css ?>" >
 											</div>
 											<?php								
 											}
