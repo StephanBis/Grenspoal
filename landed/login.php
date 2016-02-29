@@ -17,7 +17,7 @@
 				<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="button special">Terug</a></li>
+						<li><a href="index.php" class="scroll">Terug</a></li>
 					</ul>
 				</nav>
 			</header>
