@@ -1,6 +1,14 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
 input::-webkit-input-placeholder {
 	color: #1C1D26 !important;
 }
@@ -84,6 +92,12 @@ textarea:-ms-textarea-placeholder {
 .logo {
 	padding-top: 15px;
 	padding-left: 15px;
+	position: absolute;
+    left: -400px;
+    -webkit-animation: slide 4s forwards;
+    -webkit-animation-delay: 1s;
+    animation: slide 4s forwards;
+    animation-delay: 1s;
 }
 
 .scroll:hover {
@@ -104,27 +118,27 @@ textarea:-ms-textarea-placeholder {
 }
 
 .rood {
-	background-color: rgba(255, 0, 0, 0.25) !important;
+	background-color: rgba(255, 0, 0, 0.60) !important;
 }
 
 .wit {
-	background-color: rgba(255, 255, 255, 0.25) !important;
+	background-color: rgba(255, 255, 255, 0.60) !important;
 }
 
 .geel {
-	background-color: rgba(255, 255, 0, 0.25) !important;
+	background-color: rgba(255, 255, 0, 0.60) !important;
 }
 
 .groen {
-	background-color: rgba(0, 255, 0, 0.25) !important;
+	background-color: rgba(0, 255, 0, 0.60) !important;
 }
 
 .paars {
-	background-color: rgba(255, 0, 255, 0.25) !important;
+	background-color: rgba(255, 0, 255, 0.60) !important;
 }
 
 .blauw {
-	background-color: rgba(0, 0, 255, 0.25) !important;
+	background-color: rgba(0, 0, 255, 0.60) !important;
 }
 
 .prijzen {
@@ -145,8 +159,6 @@ textarea:-ms-textarea-placeholder {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	
-	
 }
 
 #toTop {
@@ -2209,7 +2221,8 @@ textarea:-ms-textarea-placeholder {
 			-webkit-transform-origin: 50% 50%;
 			-ms-transform-origin: 50% 50%;
 			transform-origin: 50% 50%;
-			color: rgba(255, 255, 255, 0.15);
+			/*color: rgba(255, 255, 255, 0.15);*/
+			color: #C4280B;
 			content: '\f1ce';
 			cursor: default;
 			display: block;
@@ -2231,7 +2244,7 @@ textarea:-ms-textarea-placeholder {
 			-webkit-animation: overlay-hide 1.5s ease-in forwards !important;
 			-ms-animation: overlay-hide 1.5s ease-in forwards !important;
 			animation: overlay-hide 1.5s ease-in forwards !important;
-			background: #1c1d26;
+			background: #fcfcfc;
 			content: '';
 			display: block;
 			height: 100%;
@@ -3544,7 +3557,7 @@ textarea:-ms-textarea-placeholder {
 	} */
 
 	#banner {
-		background-image: url("../../images/carwash.jpg");
+		background-image: url("../../images/station2.jpg");
 		background-attachment: fixed;
 		/* background-color: #272833;
 		background-image: url("../../images/banner.jpg"); */
@@ -3567,7 +3580,7 @@ textarea:-ms-textarea-placeholder {
 		}
 
 		#banner:after {
-			background: rgb(220, 220, 220);
+			/*background: rgb(220, 220, 220);*/
 			/* background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
@@ -3585,11 +3598,16 @@ textarea:-ms-textarea-placeholder {
 			display: inline-block;
 			margin-right: 1%;
 			max-width: 95%;
-			padding: 6em;
+			padding: 1em;
 			position: relative;
 			text-align: center;
 			vertical-align: middle;
 			z-index: 1;
+			background-color: white;
+			-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,1);
+			box-shadow: 0px 0px 50px 0px rgba(0,0,0,1);
+			border-radius: 5px;
 		}
 
 			#banner .content header {

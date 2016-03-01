@@ -207,7 +207,7 @@
 			
 			<!-- Shop -->
 				<section id="one" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<span class="image fit main bottom"><img src="images/Tanken.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>(Tabak) Shop</h2>
@@ -251,7 +251,7 @@
 			
 			<!-- Carwash -->
 				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit main"><img src="images/Carwash4.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<img src="images/softwash.png" alt="Softwash Express" height="100%" width="100%">
@@ -450,7 +450,7 @@
 			
 			<!-- Waspas -->
 			<section id="four" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<span class="image fit main bottom"><img src="images/Carwash3.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Waspas</h2>
@@ -493,7 +493,7 @@
 			
 			<!-- Wasboxen -->
 				<section id="seven" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit main"><img src="images/Station4.jpg" alt="" /></span>
 					<div class="content">
 						<header>							
 							<h2>Welkom in onze wasboxen</h2>
@@ -507,7 +507,7 @@
 						<div class="content">
 							<div class="container">
 								<div class="row breed">
-									<div class="4u 12u$(medium)">
+									<div class="6u 12u$(medium)">
 										<h3>Wasprogramma wasboxen</h3>
 										<table>
 											<tr>
@@ -530,7 +530,7 @@
 											</tr>
 										</table>										
 									</div>
-									<div class="4u 12u$(medium)">
+									<div class="6u 12u$(medium)">
 										<h3>Prijzen muntjes wasboxen:</h3>
 										<table>
 											<tr>
@@ -549,10 +549,7 @@
 												<td>€ 20,00</td>
 											</tr>			
 										</table>
-									</div>
-									<div class="4u 12u$(medium)">
-										<h3>Programma 3<br>NANO</h3>										
-									</div>									
+									</div>							
 								</div>
 							</div>
 						</div>						
