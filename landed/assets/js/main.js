@@ -4,7 +4,18 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+  	auto: true
+  });
+});
+
 (function($) {
+
+	var $trHeight = $('.base').height();
+	$('.filler').each(function( index ) {
+		$(this).height($trHeight)
+	});
 
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
@@ -60,7 +71,7 @@
 				$(
 					'<div id="titleBar">' +
 						'<a href="#navPanel" class="toggle"></a>' +
-						'<span class="title">' + $('#logo').html() + '</span>' +
+						'<span class="title">Carwash & Fuel Grenspoal</span>' +
 					'</div>'
 				)
 					.appendTo($body);

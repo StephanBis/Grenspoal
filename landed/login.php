@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Carwash & Fuel Grenspoal</title>
@@ -19,10 +14,10 @@
 
 			<!-- Header -->
 			<header id="header">
-				<h1 id="logo"><a href="index.html">Carwash & Fuel Grenspoal</a></h1>
+				<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="button special">Terug</a></li>
+						<li><a href="index.php" class="scroll">Terug</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -40,18 +35,30 @@
 					</form>
 				</div>
 			</section>
+			
+			<!-- Footer -->
+				<footer id="footer">					
+					<ul class="copyright">
+						<li><a target="_blank"  href="http://bisschop-software.nl/">&copy; Bisschop Software<a></li>
+					</ul>
+				</footer>
+				
+				<a href="#" id="toTop" style="display: block;"></a>
 
 		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.counterup.js"></script>
+			<script src="assets/js/jquery.waypoints.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script type="text/javascript" src="assets/js/move-top.js"></script>
+			<script type="text/javascript" src="assets/js/easing.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/main.js"></script>			
 	</body>
 </html>
