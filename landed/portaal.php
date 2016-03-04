@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Carwash & Fuel Grenspoal</title>
@@ -40,17 +35,13 @@
 							<div class="content" style="text-align: center;">
 								<h2>Prijzen<br></h2>
 								<p>Hieronder kunt u prijzen voor een bepaalde dag instellen.</p>
-								<form method="post" action="portaal.php">
+								<form method="post" action="portaal.php" class="form">
 									
-									<?php	
-										
-										$host = '85.10.205.173:3306';
-										$username = 'grenspoal';
-										$password = 'Grenspoal123';
-										$dbname = 'grenspoal';
-										
+									<?php										
 										if (isset($_POST["opslaan"])) 
 										{
+											include 'db.php';
+
 											// Create connection
 											$conn = new mysqli($host, $username, $password, $dbname);
 											// Check connection
@@ -64,10 +55,13 @@
 												echo "Error updating record: " . $conn->error;
 											} 
 											
+											$kleuren = ['geel','groen','blauw','rood','wit','paars'];
+											$i = 0;
+
 											foreach ($_POST as $param_name => $param_val) {
-												if ($param_name !== "opslaan"  && $param_name !== "datum")
+												if ($param_name !== "opslaan" && $param_name !== "datum" && $param_name !== "css")
 												{
-													$sql = "INSERT INTO prijzen (Naam, Prijs, Datum) VALUES ('" . str_replace('_', ' ', $param_name) . "','" . sprintf('%0.3f',$param_val) . "','" . $_POST['datum'] . "')";
+													$sql = "INSERT INTO prijzen (Naam, Prijs, Datum, Css) VALUES ('" . str_replace('_', ' ', $param_name) . "','" . sprintf('%0.3f',$param_val) . "','" . $_POST['datum'] . "','" . $kleuren[$i] . "')";
 													//$sql = "UPDATE prijzen SET Prijs=" . sprintf('%0.3f',$param_val) . " WHERE Naam='" . str_replace("_", " ", $param_name) . "'";
 													
 													//echo $param_name . " = " . $param_val . " - " . $sql . "<br>";
@@ -75,6 +69,8 @@
 													if ($conn->query($sql) !== TRUE) {
 														echo "<p style='color: red;'>Fout bij het updaten van de prijzen: " . $conn->error . "</p>";
 													} 
+
+													$i++;
 												}
 											}
 											
@@ -101,11 +97,8 @@
 										
 										function getPrijzen()
 										{
-											$host = '85.10.205.173:3306';
-											$username = 'grenspoal';
-											$password = 'Grenspoal123';
-											$dbname = 'grenspoal';
-											
+											include 'db.php';
+
 											$dbh = mysql_connect( $host, $username, $password );
 											mysql_select_db($dbname);
 											$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
@@ -120,31 +113,9 @@
 													<label for="<?php echo $row->Naam ?>"><?php echo $row->Naam ?>: </label>										
 												</div>
 												<div class="6u 12u$(xsmall)">
-													
-														<input id="<?php echo $row->Naam ?>" style="
-														-moz-appearance: none;
-														-webkit-appearance: none;
-														-ms-appearance: none;
-														appearance: none;
-														-moz-transition: border-color 0.2s ease-in-out;
-														-webkit-transition: border-color 0.2s ease-in-out;
-														-ms-transition: border-color 0.2s ease-in-out;
-														transition: border-color 0.2s ease-in-out;
-														background: #fcfcfc;
-														border-radius: 4px;
-														border: solid 1px #C4280B;
-														color: inherit;
-														display: block;
-														outline: 0;
-														padding: 0 1em;
-														text-decoration: none;
-														width: 100%; 
-														height: 1.75em;
-														line-height: 1.75em;"
-														name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
-													
-														
+													<input id="<?php echo $row->Naam ?>" class="dashboard-control" name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
 												</div>
+												<input id="css" name="css" type="hidden" value="<?php echo $row->Css ?>" >
 											</div>
 											<?php								
 											}
@@ -157,25 +128,7 @@
 											<label style="color:black; "for="datum">Datum van prijzen: </label>										
 										</div>
 										<div class="6u 12u$(xsmall)">
-											<input id="datum" style="
-															-moz-appearance: none;
-															-webkit-appearance: none;
-															-ms-appearance: none;
-															appearance: none;
-															-moz-transition: border-color 0.2s ease-in-out;
-															-webkit-transition: border-color 0.2s ease-in-out;
-															-ms-transition: border-color 0.2s ease-in-out;
-															transition: border-color 0.2s ease-in-out;
-															background: #fcfcfc;
-															border-radius: 4px;
-															border: solid 1px rgba(196, 40, 11, 0.7);
-															color: #1C1D26;
-															display: block;
-															outline: 0;
-															padding: 0 1em;
-															text-decoration: none;
-															width: 100%;" 
-												name="datum" type="date" value="<?php $datetime = new DateTime('tomorrow'); echo $datetime->format('Y-m-d'); ?>">
+											<input id="datum" class="dashboard-control" name="datum" type="date" value="<?php $datetime = new DateTime('tomorrow'); echo $datetime->format('Y-m-d'); ?>">
 										</div>
 									</div>
 									<br><input id="opslaan" name="opslaan" type="submit" value="Opslaan">
@@ -195,10 +148,7 @@
 								</form>
 								
 								<?php
-									$host = '85.10.205.173:3306';
-									$username = 'grenspoal';
-									$password = 'Grenspoal123';
-									$dbname = 'grenspoal';
+									include 'db.php';
 									$emails = "";
 									
 									$dbh = mysql_connect( $host, $username, $password );
@@ -228,52 +178,53 @@
 								<form method="post" action="nieuws.php">	
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<input class="textarea" id="titel" style="
-															-moz-appearance: none;
-															-webkit-appearance: none;
-															-ms-appearance: none;
-															appearance: none;
-															-moz-transition: border-color 0.2s ease-in-out;
-															-webkit-transition: border-color 0.2s ease-in-out;
-															-ms-transition: border-color 0.2s ease-in-out;
-															transition: border-color 0.2s ease-in-out;
-															background: #fcfcfc;
-															border-radius: 4px;
-															border: solid 1px rgba(196, 40, 11, 0.7);
-															color: #1C1D26;
-															display: block;
-															outline: 0;
-															padding: 0 1em;
-															text-decoration: none;
-															width: 100%;"
-											
-											
-											name="titel" type="text" maxlength="50" placeholder="Titel" required>									
+											<input class="textarea dashboard-control" id="titel" name="titel" type="text" maxlength="50" placeholder="Titel" required>									
 										</div>
 									</div>
 									
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<textarea id="omschrijving" style="
-															-moz-appearance: none;
-															-webkit-appearance: none;
-															-ms-appearance: none;
-															appearance: none;
-															-moz-transition: border-color 0.2s ease-in-out;
-															-webkit-transition: border-color 0.2s ease-in-out;
-															-ms-transition: border-color 0.2s ease-in-out;
-															transition: border-color 0.2s ease-in-out;
-															background: #fcfcfc;
-															border-radius: 4px;
-															border: solid 1px rgba(196, 40, 11, 0.7);
-															color: #1C1D26;
-															display: block;
-															outline: 0;
-															padding: 0 1em;
-															text-decoration: none;
-															width: 100%;"
-											
-											name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
+											<textarea id="omschrijving" class="dashboard-control" name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
+										</div>
+									</div>
+									
+									<div class="row uniform 50%">
+										<div class="12u 12u$(xsmall)">
+											<input id="setNieuws" name="setNieuws" type="submit" value="Opslaan">								
+										</div>
+									</div>
+								</form>
+
+								<h2>Aanpassen<br></h2>
+								<form method="post" action="nieuws.php">	
+									<input type="hidden" id="edit" name="edit" value+"edit" />
+
+									<div class="row">
+										<div class="12u 12u$(xsmall)">
+											<select>
+												<?php
+													include 'db.php';
+
+													$dbh = mysql_connect( $host, $username, $password );
+													mysql_select_db($dbname);
+													$Sql = "SELECT * FROM nieuws";
+													$sth = mysql_query($Sql, $dbh);
+													
+													while( $row = mysql_fetch_object( $sth ) )
+													{
+														echo "<option value=" . $row->Titel . ">" . $row->Titel . "</option>";
+													}
+												?>
+											</select>								
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="6u 12u$(xsmall)">
+											<input class="textarea dashboard-control" id="titel" name="titel" type="text" maxlength="50" placeholder="Titel" required>									
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<textarea id="omschrijving" class="dashboard-control" name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
 										</div>
 									</div>
 									

@@ -4,10 +4,7 @@
 	{
 		if ($_POST["nieuwsbrief"] === "Nieuwsbrief")
 		{
-			$servername = "85.10.205.173:3306";
-			$username = "grenspoal";
-			$password = "Grenspoal123";
-			$dbname = "grenspoal";
+			include 'db.php';
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);

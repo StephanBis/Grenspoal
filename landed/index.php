@@ -44,10 +44,7 @@
 						
 						<?php
 							session_start();
-							$host = '85.10.205.173:3306';
-							$username = 'grenspoal';
-							$password = 'Grenspoal123';
-							$dbname = 'grenspoal';
+							include 'db.php';
 
 							// Create connection
 							$conn = new mysqli($host, $username, $password, $dbname);
@@ -149,10 +146,7 @@
 						</header>
 						<div class="box alt">
 							<?php 
-								$host = '85.10.205.173:3306';
-								$username = 'grenspoal';
-								$password = 'Grenspoal123';
-								$dbname = 'grenspoal';
+								include 'db.php';
 
 								// Create connection
 								$conn = new mysqli($host, $username, $password, $dbname);
