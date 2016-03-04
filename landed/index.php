@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="assets/css/jquery.bxslider.css" />
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -145,64 +146,68 @@
 							<h2>Nieuws</h2>
 						</header>
 						<div class="box alt">
-							<?php 
-								include 'db.php';
+							<div class="row uniform">
+								<section class="12u 12u(large) 12u$(medium) news">
+									<ul class="bxslider">
+										<?php 
+											include 'db.php';
 
-								// Create connection
-								$conn = new mysqli($host, $username, $password, $dbname);
-								// Check connection
-								if ($conn->connect_error) {
-									die("Connection failed: " . $conn->connect_error);
-								} 
+											// Create connection
+											$conn = new mysqli($host, $username, $password, $dbname);
+											// Check connection
+											if ($conn->connect_error) {
+												die("Connection failed: " . $conn->connect_error);
+											} 
 
-								$dbh = mysql_connect( $host, $username, $password );
-								mysql_select_db($dbname);
-								$Sql = "SELECT * FROM nieuws ORDER BY Datum desc";
-								$sth = mysql_query($Sql, $dbh);
-								
-								$index = 4;
-								
-								if (mysql_num_rows($sth) === 0)
-								{
-									?>
-										<div class="row uniform">
-											Er is op dit moment geen nieuws!
-										</div>
-									<?php
-								}
-								else
-								{
-									while($row = mysql_fetch_object( $sth ))
-									{
-										if ($index === 0)
-										{
-											break;
-										}
-										else
-										{
-											$index--;
+											$dbh = mysql_connect( $host, $username, $password );
+											mysql_select_db($dbname);
+											$Sql = "SELECT * FROM nieuws ORDER BY Datum desc";
+											$sth = mysql_query($Sql, $dbh);
 											
-											?>
-												<div class="row uniform">
-													<section class="12u 6u(large) 12u$(medium) news">
-														<span class="icon alt major"><?php $date = new DateTime($row->Datum); echo $date->format('d-m-Y'); ?></span>
-														<h3><?php echo $row->Titel; ?></h3>
-														<p><?php echo $row->Beschrijving; ?></p>
-														<hr>
-													</section>
-												</div>
-											<?php
-										}
-									}
-								}
-							?>
+											$index = 4;
+											
+											if (mysql_num_rows($sth) === 0)
+											{
+												?>
+													<div class="row uniform">
+														Er is op dit moment geen nieuws!
+													</div>
+												<?php
+											}
+											else
+											{
+												while($row = mysql_fetch_object( $sth ))
+												{
+													if ($index === 0)
+													{
+														break;
+													}
+													else
+													{
+														$index--;
+														
+														?>
+														    <li>
+																<span class="icon alt major"><?php $date = new DateTime($row->Datum); echo $date->format('d-m-Y'); ?></span>
+																<h3><?php echo $row->Titel; ?></h3>
+																<p><?php echo $row->Beschrijving; ?></p>
+																<hr>
+															</li>
+														<?php
+													}
+												}
+											}
+										?>
+									</ul>
+								</section>
+							</div>
 						</div>						
 					</div>
 				</section>
 			
 			<!-- Shop -->
 				<section id="one" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<span class="image fit main bottom"><img src="images/Tanken.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>(Tabak) Shop</h2>
@@ -246,7 +251,7 @@
 			
 			<!-- Carwash -->
 				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit main"><img src="images/Carwash4.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<img src="images/softwash.png" alt="Softwash Express" height="100%" width="100%">
@@ -445,7 +450,7 @@
 			
 			<!-- Waspas -->
 			<section id="four" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<span class="image fit main bottom"><img src="images/Carwash3.jpg" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Waspas</h2>
@@ -488,7 +493,7 @@
 			
 			<!-- Wasboxen -->
 				<section id="seven" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit main"><img src="images/Station4.jpg" alt="" /></span>
 					<div class="content">
 						<header>							
 							<h2>Welkom in onze wasboxen</h2>
@@ -502,7 +507,7 @@
 						<div class="content">
 							<div class="container">
 								<div class="row breed">
-									<div class="4u 12u$(medium)">
+									<div class="6u 12u$(medium)">
 										<h3>Wasprogramma wasboxen</h3>
 										<table>
 											<tr>
@@ -525,7 +530,7 @@
 											</tr>
 										</table>										
 									</div>
-									<div class="4u 12u$(medium)">
+									<div class="6u 12u$(medium)">
 										<h3>Prijzen muntjes wasboxen:</h3>
 										<table>
 											<tr>
@@ -544,10 +549,7 @@
 												<td>€ 20,00</td>
 											</tr>			
 										</table>
-									</div>
-									<div class="4u 12u$(medium)">
-										<h3>Programma 3<br>NANO</h3>										
-									</div>									
+									</div>							
 								</div>
 							</div>
 						</div>						
@@ -559,7 +561,7 @@
 						</header>
 						<form method="post" action="mail.php" class="container 100%">
 							<div class="row uniform 50%">
-								<div class="6u 12u$(xmedium)">
+								<div class="6u 12u$(medium)">
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)"><input style="box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.3)" type="text" maxlength="50" name="naam" id="naam" placeholder="Volledige naam" required /></div>
 									</div>
@@ -591,8 +593,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="6u 12u$(xmedium)">
-									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.0785208930592!2d5.724182615758003!3d51.18077567958276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0cd113493231d%3A0xce3b2dd097cf7e30!2sSoftwashexpress+Molenbeersel!5e0!3m2!1snl!2snl!4v1452529183865" width="600" height="450" style="border:0" allowfullscreen></iframe>
+								<div class="6u 12u$(medium)">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.0785208930592!2d5.724182615758003!3d51.18077567958276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0cd113493231d%3A0xce3b2dd097cf7e30!2sSoftwashexpress+Molenbeersel!5e0!3m2!1snl!2snl!4v1452529183865" width="100%" height="450" style="border:0" allowfullscreen></iframe>
 								</div>
 							</div>
 						</form>
@@ -623,6 +625,7 @@
 		<script type="text/javascript" src="assets/js/easing.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.bxslider.min.js"></script>
 		
 		<script>
 			jQuery(document).ready(function( $ ) {

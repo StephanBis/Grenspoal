@@ -17,17 +17,17 @@
 				<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 				<nav id="nav">
 					<ul>
-						<li><a href="javascript:activateTab('page1')" class="button special">Prijzen</a></li>
-						<li><a href="javascript:activateTab('page2')" class="button special">Mailing</a></li>
-						<li><a href="javascript:activateTab('page3')" class="button special">Nieuws</a></li>
-						<li><a href="index.php" class="button special">Terug</a></li>
+						<li><a href="javascript:activateTab('page1')" class="scroll">Prijzen</a></li>
+						<li><a href="javascript:activateTab('page2')" class="scroll">Mailing</a></li>
+						<li><a href="javascript:activateTab('page3')" class="scroll">Nieuws</a></li>
+						<li><a href="index.php" class="scroll">Terug</a></li>
 					</ul>
 				</nav>
 			</header>
 
 			<!-- Banner -->
-			<section id="banner">
-				<div class="content" style="text-align: center;">
+			<section id="banner no-shadow">
+				<div class="content drop-down" style="text-align: center;">
 					<div id="tabCtrl">
 						<!-- PRIJZEN TAB -->
 					  <div id="page1" style="display: block;">
@@ -104,23 +104,76 @@
 											$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
 											$sth = mysql_query($Sql, $dbh);
 											
-											while( $row = mysql_fetch_object( $sth ) )
+											if (mysql_num_rows($sth) === 0)
 											{
-											?>
-											
-											<div class="row uniform 50%">
-												<div class="6u 12u$(xsmall)">
-													<label for="<?php echo $row->Naam ?>"><?php echo $row->Naam ?>: </label>										
-												</div>
-												<div class="6u 12u$(xsmall)">
-													<input id="<?php echo $row->Naam ?>" class="dashboard-control" name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
-												</div>
-												<input id="css" name="css" type="hidden" value="<?php echo $row->Css ?>" >
-											</div>
-											<?php								
+												?>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="Diesel">Diesel: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="Diesel" class="dashboard-control" name="Diesel" maxlength="5" type="number" step="0.001" value="1.000" placeholder="Diesel prijs" required="">										
+														</div>
+													</div>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="Euro 95">Euro 95: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="Euro 95" class="dashboard-control" name="Euro 95" maxlength="5" type="number" step="0.001" value="1.000" placeholder="Euro 95 prijs" required="">										
+														</div>
+													</div>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="AdBlue">AdBlue: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="AdBlue" class="dashboard-control" name="AdBlue" maxlength="5" type="number" step="0.001" value="1.000" placeholder="AdBlue prijs" required="">										
+														</div>
+													</div>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="Diesel rood EN590">Diesel rood EN590: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="Diesel rood EN590" class="dashboard-control" name="Diesel rood EN590" maxlength="5" type="number" step="0.001" value="1.000" placeholder="Diesel rood EN590 prijs" required="">										
+														</div>
+													</div>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="Petroleum">Petroleum: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="Petroleum" class="dashboard-control" name="Petroleum" maxlength="5" type="number" step="0.001" value="1.000" placeholder="Petroleum prijs" required="">										
+														</div>
+													</div>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="Euro 98">Euro 98: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="Euro 98" class="dashboard-control" name="Euro 98" maxlength="5" type="number" step="0.001" value="1.000" placeholder="Euro 98 prijs" required="">										
+														</div>
+													</div>
+												<?php
+											}
+											else
+											{
+												while( $row = mysql_fetch_object( $sth ) )
+												{
+												?>
+													<div class="row uniform 50%">
+														<div class="6u 12u$(xsmall)">
+															<label for="<?php echo $row->Naam ?>"><?php echo $row->Naam ?>: </label>										
+														</div>
+														<div class="6u 12u$(xsmall)">
+															<input id="<?php echo $row->Naam ?>" class="dashboard-control" name="<?php echo $row->Naam ?>" maxlength="5" type="number" step="0.001" value="<?php echo $row->Prijs ?>" placeholder="<?php echo $row->Naam ?> prijs" required="">										
+														</div>
+													</div>
+												<?php								
+												}
 											}
 										}
-
 									?>
 									<hr>
 									<div class="row uniform 50%">
