@@ -9,6 +9,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="assets/css/jquery.bxslider.css" />
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
