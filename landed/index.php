@@ -9,6 +9,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="assets/css/jquery.bxslider.css" />
+		<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
@@ -16,7 +17,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
+					<a href="#"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 					<nav id="nav">
 						<ul>
 							<li><a href="#banner" class="scroll">Home</a></li>
@@ -116,14 +117,12 @@
 									<span class="icon alt major"><a target="_blank"  href="http://www.tilmans-pouls.be/"> <img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></a></span>
 									<h3>Tilmans-Pouls & Zoon NV</h3>
 									<p>
-									Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. 
-									Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. 
-									Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.
-									<br>
-									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.tilmans-pouls.be/">  Link naar Tilmans-Pouls</a>
+										Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. 
+										Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. 
+										Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.
+										<br>
+										<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.tilmans-pouls.be/">  Link naar Tilmans-Pouls</a>
 									</p>
-									
-									
 								</section>
 								<section class="4u 6u$(large) 12u$(medium)">
 									<span class="icon alt major fa-map-marker"></span>
@@ -627,6 +626,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
+		<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		
 		<script>
 			jQuery(document).ready(function( $ ) {

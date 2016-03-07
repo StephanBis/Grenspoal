@@ -5,9 +5,16 @@
 */
 
 $(document).ready(function(){
-  $('.bxslider').bxSlider({
-  	auto: true
-  });
+	$('.bxslider').bxSlider({
+		auto: true
+	});
+
+	$(window).load(function(){
+	    $(".content").mCustomScrollbar({
+	    	theme: 'minimal-dark',
+	    	autoExpandScrollbar: true
+	    });
+	});
 });
 
 (function($) {
