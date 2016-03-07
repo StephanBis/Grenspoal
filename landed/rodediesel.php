@@ -103,8 +103,8 @@
 
 			<!-- Footer -->
 				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Bisschop Software</li>
+					<ul class="copyright">						
+						<li><a target="_blank"  href="http://bisschop-software.nl/">&copy; Bisschop Software<a></li>
 					</ul>
 				</footer>
 				
