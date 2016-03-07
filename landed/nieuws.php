@@ -1,8 +1,7 @@
 <?php
-	include 'db.php';
-
 	if (isset($_POST["titel"]) && isset($_POST["omschrijving"]))
 	{
+		include 'db.php';
 		// Create connection
 		$conn = new mysqli($host, $username, $password, $dbname);
 		// Check connection
@@ -10,7 +9,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "INSERT INTO nieuws (Titel, Beschrijving, Datum) VALUES ('" . $_POST["titel"] . "', '" . $_POST["omschrijving"] . "', '" . date("Y-m-d") . "')";
+		$sql = "INSERT INTO nieuws (Titel, Beschrijving, Datum) VALUES ('" . $_POST["titel"] . "', '" . $_POST["omschrijving"] . "', '" . $_POST["datum"] . "')";
 												
 		if ($conn->query($sql) !== TRUE) {
 			echo "Error updating record: " . $conn->error;
@@ -26,7 +25,7 @@
 		include 'db.php';
 
 		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+		$conn = new mysqli($host, $username, $password, $dbname);
 		// Check connection
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);

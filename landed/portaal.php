@@ -240,10 +240,20 @@
 											<textarea id="omschrijving" class="dashboard-control" name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
 										</div>
 									</div>
+
+									<hr>
+									<div class="row uniform 50%">
+										<div class="6u 12u$(xsmall)">
+											<label style="color:black; "for="datum">Datum van prijzen: </label>										
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<input id="datum" class="dashboard-control" name="datum" type="date" value="<?php $datetime = new DateTime('today'); echo $datetime->format('Y-m-d'); ?>">
+										</div>
+									</div>
 									
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<input id="setNieuws" name="setNieuws" type="submit" value="Opslaan">								
+											<input id="opslaan" name="opslaan" type="submit" value="Opslaan">								
 										</div>
 									</div>
 								</form>
@@ -254,7 +264,7 @@
 
 									<div class="row">
 										<div class="12u 12u$(xsmall)">
-											<select id="nieuwsLijst" name="nieuwsLijst" class="form-control">
+											<select id="nieuwsLijst" name="nieuwsLijst">
 												<?php
 													include 'db.php';
 

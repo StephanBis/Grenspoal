@@ -161,7 +161,7 @@
 
 											$dbh = mysql_connect( $host, $username, $password );
 											mysql_select_db($dbname);
-											$Sql = "SELECT * FROM nieuws ORDER BY Datum desc";
+											$Sql = "SELECT * FROM nieuws WHERE datum <= CURDATE() ORDER BY Datum desc";
 											$sth = mysql_query($Sql, $dbh);
 											
 											$index = 4;
