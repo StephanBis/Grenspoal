@@ -50,22 +50,22 @@
 									<span class="icon alt major fa-map-marker"></span>
 									<h3>Nederlanders tanken in Belgie</h3>
 									<p>
-										Nederlandse klanten mogen rode diesel enkel tanken met een landbouwvoertuig of met een speciaal gemachtig voertuig (speciaal kenteken) die een kenteken voor het buitenland heeft.											 
+										Nederlandse klanten mogen rode diesel enkel tanken met een landbouwvoertuig (speciaal kenteken) of met een speciaal gemachtig voertuig dat een kenteken voor het buitenland heeft.											 
 										<br>Aan het tanken van rode diesel in het buitenland hangen eveneens verschillende voorwaarden vast.
 										
 										<h3>Voorwaarden:</h3>
 										<table style="text-align:left;">
 											<tr>
-												<td>- Het landbouwvoertuig is zelf in Belgi&#235; geweest om te tanken</td>
+												<td>- Het landbouwvoertuig is zelf in Belgi&#235; geweest om te tanken.</td>
 											</tr>
 											<tr>
-												<td>- De rode diesel is in Belgi&#235 getankt in het betreffende landbouwvoertuig</td>
+												<td>- De rode diesel is in Belgi&#235 getankt in het betreffende landbouwvoertuig.</td>
 											</tr>
 											<tr>
-												<td>- De rode diesel zit in het normale brandstofreservoir van het betreffende werktuig/tractor</td>
+												<td>- De rode diesel zit in het normale brandstofreservoir van het betreffende werktuig/tractor.</td>
 											</tr>
 											<tr>
-												<td>- Als wij u controleren, moet u aantonen aan de hand van een ticket dat de rode diesel in Belgi&#235 is getankt</td>
+												<td>- Als wij u controleren, moet u aantonen aan de hand van een ticket dat de rode diesel in Belgi&#235 is getankt.</td>
 											</tr>
 											<tr>
 											<td><i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://download.belastingdienst.nl/douane/docs/nieuwsbrief_rode_diesel_acc1121z5fd.pdf">  Link naar douane</a></td>

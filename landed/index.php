@@ -26,7 +26,7 @@
 							<li><a href="rodediesel.php" class="scroll">Rode Diesel</a></li>
 							<li><a href="#two" class="scroll">Carwash</a></li>
 							<li><a href="#four" class="scroll">Waspas</a></li>
-							<li><a href="#seven" class="scroll">Wasboxen</a></li>
+							<li><a href="#seven" class="scroll">Selfwash-boxen</a></li>
 							<li><a href="#six" class="scroll">Contact</a></li>
 						</ul>
 					</nav>
@@ -127,7 +127,7 @@
 								<section class="4u 6u$(large) 12u$(medium)">
 									<span class="icon alt major fa-map-marker"></span>
 									<h3>Vlak aan de grens met Nederland</h3>
-									<p>Omdat het station op de grens met Nederland gelegen is, hebben wij een aparte tankpiste voorzien voor land- en tuinbouwvoertuigen die vanuit Nederland rode diesel kunnen tanken aan een zeer voordelige prijs. Momenteel is er een prijsverschil van ongeveer 50 eurocent per liter tussen rode diesel en witte diesel !! Als u als Nederlandse land- of tuinbouwer kan aantonen dat u in België getankt heeft mag u immers met rode diesel in de daartoe bestemde tank van het voertuig terug naar Nederland.</p>
+									<p>Omdat het station op de grens met Nederland gelegen is, hebben wij een aparte tankpiste voorzien voor land- en tuinbouwvoertuigen die vanuit Nederland rode diesel kunnen tanken aan een zeer voordelige prijs. Momenteel is er een prijsverschil van ongeveer 50 eurocent per liter tussen rode diesel en witte diesel !! Als u als Nederlandse land- of tuinbouwer kan aantonen dat u in België getankt heeft, mag u immers met rode diesel in de daartoe bestemde tank van het voertuig terug naar Nederland.</p>
 								</section>
 								<section class="4u$ 6u(large) 12u$(medium)">
 									<span class="icon alt major fa-shopping-cart"></span>
@@ -456,7 +456,7 @@
 							<h2>Waspas</h2>
 							<p>Hoe meer u herlaadt, hoe meer korting!</p>							
 							<p>
-							Onze waspas is beschikbaar vanaf €50. Er zijn meerdere herlaadmogelijkheden
+							Onze waspas is beschikbaar vanaf € 50,-. Er zijn meerdere herlaadmogelijkheden.
 							<br>
 							<br>
 							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/index/be-nl/8660/">  Waspas online bestellen</a>
@@ -496,11 +496,13 @@
 					<span class="image fit main"><img src="images/Station4.jpg" alt="" /></span>
 					<div class="content">
 						<header>							
-							<h2>Welkom in onze wasboxen</h2>
+							<h2>Welkom in onze <br> selfwash-boxen</h2>
 							<p>In enkele minuten een mooie glimmende wagen.</p>
-							<p>U kunt gebruik maken van de wasboxen door middel van de muntjes die u kunt verkrijgen aan de automaat buiten aan de shop. 
-							Elk van deze muntjes geeft een bepaalde tijd de mogelijkheid om gebruik te maken van de wasbox. Hoe meer muntjes u tegelijkertijd ingooit, hoe langer u kunt spoelen/wassen.
-							Het wasprogramma is terug te vinden in de wasboxen of is overzichtelijk terug te vinden in het volgende deel van de website.<br>Wasboxen zijn altijd volledig beschikbaar.</p>																
+							<p>U kunt gebruik maken van de selfwash-boxen door middel van de muntjes die u kunt verkrijgen aan de automaat buiten aan de shop. 
+							Elk van deze muntjes geeft een bepaalde tijd de mogelijkheid om gebruik te maken van de selfwash-box. Hoe meer muntjes u tegelijkertijd ingooit, hoe langer u kunt spoelen/wassen.
+							Het wasprogramma is terug te vinden in de selfwash-boxen of is terug te vinden in het volgende deel van de website.<br>De selfwash-boxen zijn altijd volledig beschikbaar.
+							<h3>Stofzuigers</h3>
+							De muntjes die gebruikt worden voor de self-washboxen zijn ook bedoeld voor het gebruik van de stofzuigers langs het tankstation. U kunt de stofzuigers vinden richting in de ingang van de carwash.</p>
 						</header>
 					</div>				
 				</section>	
@@ -508,7 +510,7 @@
 							<div class="container">
 								<div class="row breed">
 									<div class="6u 12u$(medium)">
-										<h3>Wasprogramma wasboxen</h3>
+										<h3>Wasprogramma selfwash-boxen</h3>
 										<table>
 											<tr>
 												<td>Innevelen velgen</td>
@@ -531,7 +533,7 @@
 										</table>										
 									</div>
 									<div class="6u 12u$(medium)">
-										<h3>Prijzen muntjes wasboxen:</h3>
+										<h3>Prijzen muntjes selfwash-boxen/stofzuigers</h3>
 										<table>
 											<tr>
 												<td>5 muntjes</td>
