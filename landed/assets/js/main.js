@@ -5,9 +5,7 @@
 */
 
 $(document).ready(function(){
-	$('.bxslider').bxSlider({
-		auto: true
-	});
+	$('.bxslider').bxSlider();
 
 	$(window).load(function(){
 	    $(".content").mCustomScrollbar({

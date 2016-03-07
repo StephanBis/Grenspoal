@@ -148,7 +148,6 @@
 						<div class="box alt">
 							<div class="row uniform">
 								<section class="12u 12u(large) 12u$(medium) news">
-									<ul class="bxslider">
 										<?php 
 											include 'db.php';
 
@@ -176,6 +175,9 @@
 											}
 											else
 											{
+												?>
+													<ul class="bxslider">
+												<?php
 												while($row = mysql_fetch_object( $sth ))
 												{
 													if ($index === 0)
@@ -191,14 +193,15 @@
 																<span class="icon alt major"><?php $date = new DateTime($row->Datum); echo $date->format('d-m-Y'); ?></span>
 																<h3><?php echo $row->Titel; ?></h3>
 																<p><?php echo $row->Beschrijving; ?></p>
-																<hr>
 															</li>
 														<?php
 													}
 												}
+												?>
+													</ul>
+												<?php
 											}
 										?>
-									</ul>
 								</section>
 							</div>
 						</div>						
@@ -506,7 +509,7 @@
 						</header>
 					</div>				
 				</section>	
-						<div class="content">
+						<div class="contents">
 							<div class="container">
 								<div class="row breed">
 									<div class="6u 12u$(medium)">
