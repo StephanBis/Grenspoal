@@ -248,13 +248,13 @@
 									</div>
 								</form>
 
-								<h2>Aanpassen<br></h2>
+								<h2>Verwijderen<br></h2>
 								<form method="post" action="nieuws.php">	
 									<input type="hidden" id="edit" name="edit" value+"edit" />
 
 									<div class="row">
 										<div class="12u 12u$(xsmall)">
-											<select>
+											<select id="nieuwsLijst" name="nieuwsLijst" class="form-control">
 												<?php
 													include 'db.php';
 
@@ -265,25 +265,16 @@
 													
 													while( $row = mysql_fetch_object( $sth ) )
 													{
-														echo "<option value=" . $row->Titel . ">" . $row->Titel . "</option>";
+														echo "<option value=" . $row->Id . ">" . $row->Titel . "</option>";
 													}
 												?>
 											</select>								
 										</div>
 									</div>
-
-									<div class="row">
-										<div class="6u 12u$(xsmall)">
-											<input class="textarea dashboard-control" id="titel" name="titel" type="text" maxlength="50" placeholder="Titel" required>									
-										</div>
-										<div class="6u 12u$(xsmall)">
-											<textarea id="omschrijving" class="dashboard-control" name="omschrijving" maxlength="250" placeholder="Omschrijving" required></textarea>								
-										</div>
-									</div>
 									
 									<div class="row uniform 50%">
 										<div class="12u 12u$(xsmall)">
-											<input id="setNieuws" name="setNieuws" type="submit" value="Opslaan">								
+											<input id="deleteNieuws" name="deleteNieuws" type="submit" value="Verwijder">								
 										</div>
 									</div>
 								</form>

@@ -27,6 +27,6 @@
 	}
 	else
 	{
-		echo "Sommige velden zijn niet ingevult, ga aub terug en vul alles in!";
+		echo "Kon mail niet verzenden!";
 	}
 ?>
