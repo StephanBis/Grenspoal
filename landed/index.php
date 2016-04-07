@@ -56,13 +56,6 @@
 							session_start();
 							include 'db.php';
 
-							// Create connection
-							$conn = new mysqli($host, $username, $password, $dbname);
-							// Check connection
-							if ($conn->connect_error) {
-								die("Connection failed: " . $conn->connect_error);
-							} 
-
 							$dbh = mysql_connect( $host, $username, $password );
 							mysql_select_db($dbname);
 							$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
