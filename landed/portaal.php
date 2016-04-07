@@ -11,6 +11,10 @@
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
+		<?php
+			session_start();
+		?>
+
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -34,11 +38,22 @@
 					  <div id="page1" style="display: block;">
 						<section id="banner">
 							<div class="content" style="text-align: center;">
+								<?php 
+									if (isset($_SESSION["message"]))
+									{
+										?>
+											<div class="alert succes">
+												<?php echo $_SESSION["message"]; ?>
+											</div>
+										<?php
+										unset($_SESSION["message"]);
+									}
+								?>
+								
 								<h2>Prijzen<br></h2>
 								<p>Hieronder kunt u prijzen voor een bepaalde dag instellen.</p>
 								<form method="post" action="portaal.php" class="form">
-									
-									<?php										
+									<?php									
 										if (isset($_POST["opslaan"])) 
 										{
 											include 'db.php';
@@ -77,22 +92,37 @@
 											
 											$conn->close();
 											
-											echo "<p style='color: green;'>De prijzen voor " . $_POST['datum'] . " zijn opgeslagen!</p>";
+											echo "<div class='alert succes'>De prijzen voor " . $_POST['datum'] . " zijn opgeslagen!</div>";
 											
 											getPrijzen();
 										}
 										else
 										{
-											$gebruikersnaam = $_POST["gebruikersnaam"];
-											$wachtwoord = $_POST["wachtwoord"];
-											
-											if ($gebruikersnaam != "admin" || $wachtwoord != "admin") 
+											if (isset($_POST["gebruikersnaam"]) && isset($_POST["wachtwoord"]))
 											{
-												header('Location: login.php');
-											} 
+												$gebruikersnaam = $_POST["gebruikersnaam"];
+												$wachtwoord = $_POST["wachtwoord"];
+
+												if ($gebruikersnaam !== "admin" && $wachtwoord !== "admin")
+												{
+													header('Location: login.php');
+												}
+												else
+												{
+													$_SESSION["login"] = "y";
+													getPrijzen();
+												}
+											}
 											else
 											{
-												getPrijzen();
+												if ($_SESSION["login"] === "y")
+												{
+													getPrijzen();
+												}
+												else
+												{
+													header('Location: login.php');
+												}
 											}	
 										}
 										
@@ -245,7 +275,7 @@
 									<hr>
 									<div class="row uniform 50%">
 										<div class="6u 12u$(xsmall)">
-											<label style="color:black; "for="datum">Datum van prijzen: </label>										
+											<label style="color:black; "for="datum">Datum van nieuwsbericht: </label>										
 										</div>
 										<div class="6u 12u$(xsmall)">
 											<input id="datum" class="dashboard-control" name="datum" type="date" value="<?php $datetime = new DateTime('today'); echo $datetime->format('Y-m-d'); ?>">
@@ -259,10 +289,8 @@
 									</div>
 								</form>
 
-								<h2>Verwijderen<br></h2>
+								<h2>Aanpassen / Verwijderen<br></h2>
 								<form method="post" action="nieuws.php">	
-									<input type="hidden" id="edit" name="edit" value+"edit" />
-
 									<div class="row">
 										<div class="12u 12u$(xsmall)">
 											<select id="nieuwsLijst" name="nieuwsLijst">
@@ -284,8 +312,11 @@
 									</div>
 									
 									<div class="row uniform 50%">
-										<div class="12u 12u$(xsmall)">
-											<input id="deleteNieuws" name="deleteNieuws" type="submit" value="Verwijder">								
+										<div class="6u 12u$(xsmall)">
+											<input id="deleteNieuws" name="deleteNieuws" type="submit" value="Verwijder" onclick="return confirm('Weet u zeker dat u dit nieuwsbericht wilt verwijderen?')">								
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<input id="editNieuws" name="editNieuws" type="submit" value="Aanpassen">								
 										</div>
 									</div>
 								</form>
@@ -320,7 +351,7 @@
 			<script type="text/javascript" src="assets/js/move-top.js"></script>
 			<script type="text/javascript" src="assets/js/easing.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>			
+			<script src="assets/js/main_small.js"></script>			
 			<script type="text/javascript">
 
 			  function activateTab(pageId) {

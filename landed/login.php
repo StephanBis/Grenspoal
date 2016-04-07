@@ -72,6 +72,6 @@
 			<script type="text/javascript" src="assets/js/move-top.js"></script>
 			<script type="text/javascript" src="assets/js/easing.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>			
+			<script src="assets/js/main_small.js"></script>			
 	</body>
 </html>

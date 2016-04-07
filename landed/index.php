@@ -54,6 +54,7 @@
 						
 						<?php
 							session_start();
+							$_SESSION["login"] = "n";
 							include 'db.php';
 
 							$dbh = mysql_connect( $host, $username, $password );
@@ -64,7 +65,6 @@
 							
 							if (mysql_num_rows($sth) === 0)
 							{	
-								
 								$Sql = "SELECT * FROM prijzen WHERE Datum = (SELECT MAX(Datum) FROM prijzen WHERE Datum < CURDATE())";
 								$sth = mysql_query($Sql, $dbh);							
 							}
@@ -593,7 +593,7 @@
 												if (isset($_SESSION["message"]))
 												{
 													?>
-														<div class="alert alert-success">
+														<div class="alert succes">
 															<?php echo $_SESSION["message"]; ?>
 														</div>
 													<?php

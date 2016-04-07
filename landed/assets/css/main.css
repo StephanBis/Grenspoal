@@ -55,6 +55,22 @@ textarea:-ms-textarea-placeholder {
 	color: #1C1D26 !important;  
 }
 
+/* Alert message box */
+.alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.succes {
+	background-color: #4CAF50;
+}
+
+.error {
+	background-color: #f44336;
+}
+
 /* Style The Dropdown Button */
 .dropbtn {
     border: 0;
