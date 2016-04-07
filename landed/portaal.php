@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -17,10 +18,10 @@
 				<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 				<nav id="nav">
 					<ul>
+						<li><a href="index.php#banner" class="scroll">Home</a></li>
 						<li><a href="javascript:activateTab('page1')" class="scroll">Prijzen</a></li>
 						<li><a href="javascript:activateTab('page2')" class="scroll">Mailing</a></li>
-						<li><a href="javascript:activateTab('page3')" class="scroll">Nieuws</a></li>
-						<li><a href="index.php" class="scroll">Terug</a></li>
+						<li><a href="javascript:activateTab('page3')" class="scroll">Nieuws</a></li>						
 					</ul>
 				</nav>
 			</header>

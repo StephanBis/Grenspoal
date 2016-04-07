@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -17,7 +18,19 @@
 				<a href="index.php"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.php" class="scroll">Terug</a></li>
+						<li><a href="index.php#banner" class="scroll">Home</a></li>							
+						<li><a href="index.php#one" class="scroll">Shop</a></li>							
+						<li><a href="index.php#two" class="scroll">Carwash</a></li>
+						<li><a href="index.php#four" class="scroll">Waspas</a></li>
+						<li><a href="index.php#seven" class="scroll">Selfwash-boxen</a></li>
+						<div class="dropdown">
+							  <li class="dropbtn">Diesel</li>
+							  <div class="dropdown-content">
+								<a href="rodediesel.php">Rode Diesel</a>
+								<a href="profdiesel.php">Prof. Diesel</a>    
+							  </div>
+							</div>
+						<li><a href="index.php#six" class="scroll">Contact</a></li>
 					</ul>
 				</nav>
 			</header>

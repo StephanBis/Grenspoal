@@ -4,17 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-$(document).ready(function(){
-	$('.bxslider').bxSlider();
-
-	$(window).load(function(){
-	    $(".content").mCustomScrollbar({
-	    	theme: 'minimal-dark',
-	    	autoExpandScrollbar: true
-	    });
-	});
-});
-
 (function($) {
 
 	var $trHeight = $('.base').height();

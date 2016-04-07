@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -43,7 +44,7 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h2>Rode Diesel tanken in Belgi&#235;</h2>
+							<h2>Professionele Diesel</h2>
 							<p>Tankstation Grenspoal is eigendom van brandstoffen <br> Tilmans-Pouls & Zoon NV uit Maaseik.</p>
 						</header>						
 					</div>
@@ -59,13 +60,26 @@
 						<div class="box alt">
 							<div class="row uniform">
 								<section class="4u 6u(large) 12u$(medium)">
-									<span class="icon alt major fa-map-marker"></span>
-									<h3>Nederlanders tanken in Belgie</h3>
+									<span class="icon alt major fa fa-eur"></span>
+									<h3>Voorwaarden teruggave accijnzen</h3>
 									<p>
-										Nederlandse klanten mogen rode diesel enkel tanken met een landbouwvoertuig (speciaal kenteken) of met een speciaal gemachtig voertuig dat een kenteken voor het buitenland heeft.											 
+										Nederlandse klanten mogen rode diesel enkel tanken met een landbouwvoertuig (speciaal kenteken) of met een speciaal gemachtigd voertuig dat een kenteken voor het buitenland heeft.											 
 										<br>Aan het tanken van rode diesel in het buitenland hangen eveneens verschillende voorwaarden vast.
 										
-										<h3>Voorwaarden:</h3>
+																				
+										 
+									</p>
+								</section>
+								<section class="4u 6u$(large) 12u$(medium)">
+									<span class="icon alt major fa fa-question"></span>
+									<h3>Manieren om accijnzen terug te vorderen</h3>
+									<p>
+									Alleen de vaste tank van het betreffende voertuig mag gevuld worden, dit betekent dat er geen mobiele tanks afgetankt mogen worden om er bijvoorbeeld andere machines in Nederland mee te vullen.
+									<br>
+									Als u getankt heeft in Belgi&#235; moet u dit altijd kunnen aantonen aan de hand van een kassaticket.								
+									</p>
+									
+									<h3>Voorwaarden:</h3>
 										<table style="text-align:left;">
 											<tr>
 												<td>- Het landbouwvoertuig is zelf in Belgi&#235; geweest om te tanken.</td>
@@ -74,36 +88,26 @@
 												<td>- De rode diesel is in Belgi&#235 getankt in het betreffende landbouwvoertuig.</td>
 											</tr>
 											<tr>
-												<td>- De rode diesel zit in het normale brandstofreservoir van het betreffende werktuig/tractor.</td>
+												<td>- De rode diesel zit in het normale brandstofreservoir van het betreffende landbouwvoertuig.</td>
 											</tr>
 											<tr>
-												<td>- Als wij u controleren, moet u aantonen aan de hand van een ticket dat de rode diesel in Belgi&#235 is getankt.</td>
+												<td>- Als de douane/overheidsinstantie controleert, moet u kunnen aantonen dat de rode diesel in Belgi&#235 is getankt.</td>
 											</tr>
 											<tr>
-											<td><i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://download.belastingdienst.nl/douane/docs/nieuwsbrief_rode_diesel_acc1121z5fd.pdf">  Link naar douane</a></td>
+											<td><i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://download.belastingdienst.nl/douane/docs/nieuwsbrief_rode_diesel_acc1121z5fd.pdf"> Douane</a></td>
 											</tr>
-										</table>										
-										 
-									</p>
-								</section>
-								<section class="4u 6u$(large) 12u$(medium)">
-									<span class="icon alt major fa fa-car"></span>
-									<h3>Mobiele tank vullen</h3>
-									<p>
-									Alleen de vaste tank van het betreffende voertuig mag gevuld worden, dit betekent dat er geen mobiele tanks afgetankt mogen worden om er bijvoorbeeld andere machines in Nederland mee te vullen.
-									<br>
-									Als u getankt heeft in Belgi&#235; moet u dit altijd kunnen aantonen aan de hand van een kassaticket.								
-									</p>
+										</table>
+									
 								</section>
 								<section class="4u$ 6u(large) 12u$(medium)">
-									<span class="icon alt major fa fa-university"></span>
-									<h3>BTW recupereren</h3>
+									<span class="icon alt major fa fa-info"></span>
+									<h3>Bijkomende informatie</h3>
 									<p>
 									Een veelgestelde vraag is of de betaalde BTW terug te recuperen is. Dit is mogelijk via de volgende link.
 									<br>
-									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://ccff02.minfin.fgov.be/KMWeb/document.do?method=view&id=68fc07cc-81d3-44a9-a36f-f390ec7cb23b#findHighlighted">  Link naar Federale Overheid</a>
+									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://ccff02.minfin.fgov.be/KMWeb/document.do?method=view&id=68fc07cc-81d3-44a9-a36f-f390ec7cb23b#findHighlighted"> Federale Overheid</a>
 									<br>
-									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.ondernemersplein.nl/regel/teruggaaf-btw-buitenland/">  Link naar handleiding recuperatie BTW</a>
+									<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.ondernemersplein.nl/regel/teruggaaf-btw-buitenland/"> Handleiding recuperatie BTW</a>
 									
 									
 									</p>
@@ -139,12 +143,7 @@
 			<script src="assets/js/main_small.js"></script>
 			
 			<script>
-				jQuery(document).ready(function( $ ) {
-					$('.float').counterUp({
-						delay: 10, // the delay time in ms
-						time: 1800 // the speed time in ms
-					});
-					
+				jQuery(document).ready(function( $ ) {					
 					//dit zorgt er normaal voor dat hij scrolled.. maar werkt nog niet
 					$(".scroll").on('click','a', function(event){ 
 						event.preventDefault();

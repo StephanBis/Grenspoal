@@ -20,13 +20,20 @@
 					<a href="#"><img class="logo" src="images/logo.png" alt="Carwash & Fuel Grenspoal" width="400px"></a>
 					<nav id="nav">
 						<ul>
-							<li><a href="#banner" class="scroll">Home</a></li>
-							<!-- <li><a href="#eight" class="scroll">Nieuws</a></li> -->
-							<li><a href="#one" class="scroll">Shop</a></li>
-							<li><a href="rodediesel.php" class="scroll">Rode Diesel</a></li>
+							<li><a href="#banner" class="scroll">Home</a></li>							
+							<li><a href="#one" class="scroll">Shop</a></li>							
 							<li><a href="#two" class="scroll">Carwash</a></li>
 							<li><a href="#four" class="scroll">Waspas</a></li>
-							<li><a href="#seven" class="scroll">Selfwash-boxen</a></li>
+							<li><a href="#seven" class="scroll">Selfwash-boxen</a></li>						
+							
+							<div class="dropdown">
+							  <li class="dropbtn">Diesel</li>
+							  <div class="dropdown-content">
+								<a href="rodediesel.php">Rode Diesel</a>
+								<a href="profdiesel.php">Prof. Diesel</a>    
+							  </div>
+							</div>						
+							
 							<li><a href="#six" class="scroll">Contact</a></li>
 						</ul>
 					</nav>
@@ -59,18 +66,16 @@
 							$dbh = mysql_connect( $host, $username, $password );
 							mysql_select_db($dbname);
 							$Sql = "SELECT * FROM prijzen WHERE Datum = CURDATE()";
+														
 							$sth = mysql_query($Sql, $dbh);
 							
 							if (mysql_num_rows($sth) === 0)
-							{
-								?>
-									<tr>
-										<td></td>
-										<td>Er zijn geen prijzen opgegeven voor vandaag!</td>
-									</tr>
-								<?php
+							{	
+								
+								$Sql = "SELECT * FROM prijzen WHERE Datum = (SELECT MAX(Datum) FROM prijzen WHERE Datum < CURDATE())";
+								$sth = mysql_query($Sql, $dbh);							
 							}
-							else
+							if (mysql_num_rows($sth) > 0)
 							{
 								while($row = mysql_fetch_object( $sth ))
 								{
@@ -79,7 +84,7 @@
 								?>
 									<tr class="<?php echo $row->Css ?>">
 										<td><?php echo $row->Naam ?></td>
-										<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+										<td>€ <span class="float"><?php echo number_format((float)$row->Prijs, 3, '.', ''); ?></span></td>
 									</tr>
 								<?php								
 									}
@@ -88,7 +93,7 @@
 								?>
 									<tr class="<?php echo $row->Css ?>">
 										<td><?php echo $row->Naam ?> ®</td>
-										<td>€ <span class="float"><?php echo $row->Prijs ?></span></td>
+										<td>€ <span class="float"><?php echo number_format((float)$row->Prijs, 3, '.', ''); ?></span></td>
 									</tr>
 								<?php		
 									}
@@ -114,23 +119,23 @@
 						<div class="box alt">
 							<div class="row uniform">
 								<section class="4u 6u(large) 12u$(medium)">
-									<span class="icon alt major"><a target="_blank"  href="http://www.tilmans-pouls.be/"> <img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></a></span>
+									<span class="icon alt major"><a target="_blank" href="http://www.tilmans-pouls.be/"> <img src="images/tp.png" alt="Tilmans-Pouls" height="100%" width="100%"></a></span>
 									<h3>Tilmans-Pouls & Zoon NV</h3>
 									<p>
 										Is reeds sinds de jaren ’60 actief in de brandstoffenwereld. Vital Tilmans is de derde generatie aan het hoofd van het familiebedrijf. 
 										Bij Grenspoal kan u terecht voor alle soorten kwaliteitsbrandstof gaande van diesel en benzine voor wegvoertuigen tot rode diesel voor landbouwtractoren en petroleum voor zibro kachels. 
 										Wij dragen service, kwaliteit en betrouwbaarheid hoog in het vaandel en combineren dit met aantrekkelijke prijzen.
 										<br>
-										<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.tilmans-pouls.be/">  Link naar Tilmans-Pouls</a>
+										<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.tilmans-pouls.be/"> Tilmans-Pouls</a>
 									</p>
 								</section>
 								<section class="4u 6u$(large) 12u$(medium)">
-									<span class="icon alt major fa-map-marker"></span>
+									<span class="icon alt major fa-map-marker"><a href="#six"></a></span>
 									<h3>Vlak aan de grens met Nederland</h3>
 									<p>Omdat het station op de grens met Nederland gelegen is, hebben wij een aparte tankpiste voorzien voor land- en tuinbouwvoertuigen die vanuit Nederland rode diesel kunnen tanken aan een zeer voordelige prijs. Momenteel is er een prijsverschil van ongeveer 50 eurocent per liter tussen rode diesel en witte diesel !! Als u als Nederlandse land- of tuinbouwer kan aantonen dat u in België getankt heeft, mag u immers met rode diesel in de daartoe bestemde tank van het voertuig terug naar Nederland.</p>
 								</section>
 								<section class="4u$ 6u(large) 12u$(medium)">
-									<span class="icon alt major fa-shopping-cart"></span>
+									<span class="icon alt major fa-shopping-cart"><a href="#one"></a></span>
 									<h3>Shop</h3>
 									<p>Voor de opstelling van een factuur werken wij met een eigen tankkaart die voor u aangemaakt kan worden en de volgende dag reeds beschikbaar ligt in de shop. Hier kan u elke dag verse broodjes, koffie, gekoelde dranken en snacks nuttigen. Deze is trouwens ook voorzien van een ruim assortiment aan tabakswaren. Goedkoop tanken in Kinrooi - Molenbeersel. De service met een glimlach.</p>
 								</section>
@@ -148,7 +153,6 @@
 						<div class="box alt">
 							<div class="row uniform">
 								<section class="12u 12u(large) 12u$(medium) news">
-									<ul class="bxslider">
 										<?php 
 											include 'db.php';
 
@@ -176,6 +180,9 @@
 											}
 											else
 											{
+												?>
+													<ul class="bxslider">
+												<?php
 												while($row = mysql_fetch_object( $sth ))
 												{
 													if ($index === 0)
@@ -191,14 +198,15 @@
 																<span class="icon alt major"><?php $date = new DateTime($row->Datum); echo $date->format('d-m-Y'); ?></span>
 																<h3><?php echo $row->Titel; ?></h3>
 																<p><?php echo $row->Beschrijving; ?></p>
-																<hr>
 															</li>
 														<?php
 													}
 												}
+												?>
+													</ul>
+												<?php
 											}
 										?>
-									</ul>
 								</section>
 							</div>
 						</div>						
@@ -259,7 +267,7 @@
 							<p>
 							In enkele minuten een mooie glimmende wagen.
 							<br>
-							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/">  Link naar Softwash Express</a>
+							<i class="icon fa-long-arrow-right"></i><a target="_blank" href="http://www.softwashexpress.be/"> Softwash Express</a>
 							</p>
 							
 							<h3>Openingsuren:</h3>
@@ -506,7 +514,7 @@
 						</header>
 					</div>				
 				</section>	
-						<div class="content">
+						<div class="contents">
 							<div class="container">
 								<div class="row breed">
 									<div class="6u 12u$(medium)">
@@ -560,6 +568,13 @@
 					<div class="container">
 						<header>
 							<h2 style="color:#fcfcfc;">Contact</h2>
+							<p>
+								<a class="contact"><i class="fa fa-phone"></i>  +32 89 46 10 45</a>
+								<br>
+								<a class="contact" href="mailto:grenspoal@telenet.be"><i class="fa fa-envelope-o"></i>  grenspoal@telenet.be</a>
+							</p>
+							
+							
 						</header>
 						<form method="post" action="mail.php" class="container 100%">
 							<div class="row uniform 50%">
