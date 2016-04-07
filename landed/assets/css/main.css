@@ -55,6 +55,82 @@ textarea:-ms-textarea-placeholder {
 	color: #1C1D26 !important;  
 }
 
+/* Style The Dropdown Button */
+.dropbtn {
+    border: 0;
+	border-radius: 5px;
+	color: #C4280B ;
+	height: inherit;
+	line-height: normal;
+	outline: 0;
+	font-weight: normal !important;
+	background-color: #fcfcfc;
+	border: 1px #C4280B solid;
+	text-align: center;
+	padding: 15px;
+	font-size: 18px !important;
+	cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+	height: inherit;	
+}
+
+.dropbtn:hover {
+	background-color: #C4280B !important;
+	color: #fcfcfc !important;
+	-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;	
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fcfcfc;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	height: ;
+	font-size: 18px !important;
+	border: 1px #C4280B solid;
+	border-radius: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #C4280B;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	font-size: 18px !important;
+	
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #C4280B !important;
+	color: #fcfcfc !important;
+	-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #fcfcfc;
+}
+
 .no-shadow {
 	box-shadow: none;
 }
@@ -64,7 +140,7 @@ textarea:-ms-textarea-placeholder {
 }
 
 .title {
-	color: #1C1D26 !important;
+	color: #C4280B !important;
 }
 
 .form input {
@@ -182,6 +258,8 @@ textarea:-ms-textarea-placeholder {
 	text-align: right;
 	border-collapse: initial;
 	color: #1C1D26;
+	border: 1px #C4280B solid;
+	border-radius: 5px;
 }
 
 .programma {
@@ -1805,6 +1883,18 @@ textarea:-ms-textarea-placeholder {
 		a:hover {
 			color: #E44C65 !important;
 			border-bottom-color: transparent;
+		}
+		
+		.contact {
+			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			/* border-bottom: dotted 1px; */
+			color: #FCFCFC;
+			text-decoration: none;
+			margin: 0 0 0.5em 0 !important;	
+			
 		}
 
 	strong, b {
